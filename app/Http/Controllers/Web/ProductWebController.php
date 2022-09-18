@@ -18,7 +18,7 @@ class ProductWebController extends Controller
          $products = Product::where(['category_id'=>$catgory_id,'statuse'=>'1'])->get();
          else
          $products=Product::where('statuse','1')->get();
-       
+          
         return view('web.product', compact('products','catgorys'));
 
     } 
