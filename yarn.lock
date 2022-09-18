@@ -3593,6 +3593,11 @@
   "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz"
   "version" "1.2.6"
 
+"mix@^0.0.1":
+  "integrity" "sha512-UjrM/1eRWwyzNi1FuefzNzod7gR2q2cgqRS02iNCwE+zDojQ80eO7cz7an0+pcLJRG2RSbjmafk8wNIOluW6qQ=="
+  "resolved" "https://registry.npmjs.org/mix/-/mix-0.0.1.tgz"
+  "version" "0.0.1"
+
 "ms@2.0.0":
   "integrity" "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A=="
   "resolved" "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz"
