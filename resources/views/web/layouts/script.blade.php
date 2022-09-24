@@ -1,2 +1,9 @@
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- Javascript files-->
+<script src="{{asset('web/asset/js/jquery.min.js')}}"></script>
+<script src="{{asset('web/asset/js/popper.min.js')}}"></script>
+<script src="{{asset('web/asset/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('web/asset/js/jquery-3.0.0.min.js')}}"></script>
+<!-- sidebar -->
+<script src="{{asset('web/asset/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+<script src="{{asset('web/asset/js/custom.js')}}"></script>
 @yield('script')

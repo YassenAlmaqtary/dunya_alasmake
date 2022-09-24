@@ -2,61 +2,176 @@
 @section('title')
 دنيا الاسماك
 @endsection
-
 @section('css')
-<link rel="stylesheet" href="{{asset('web/asset/product.css')}}">
+  <link rel="stylesheet" href="{{asset('web/asset/product.css')}}">
 @endsection
 @section('categorys')
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+<div class="btn-group">
+  <button type="button" class="btn btn_catgory dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     الاقسام
-  </a>
-  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <li><a class="dropdown-item" href="{{route('product')}}">الكل</a></li>  
-       @isset($catgorys)
-       @foreach ($catgorys as $category )
-          <li><a class="dropdown-item" href="{{route('product',$category->id)}}">{{$category->name}}</a></li>     
-       @endforeach
-      
-      @endisset
-
-  </ul>
-</li>
-
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="{{route('product')}}">الكل</a>
+    @isset($catgorys)
+    @foreach ($catgorys as $category )
+    <a class="dropdown-item" href="{{route('product',$category->id)}}">{{$category->name}}</a>
+    @endforeach
+    @endisset
+  </div>
+</div>
 @endsection
+
 @section('search')
-<form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
+< <div class="search">
+  <form action="#">
+     <input class="form_sea" type="text" placeholder="Search" name="search">
+     <button type="submit" class="seach_icon"><i class="fa fa-search"></i></button>
   </form>
+</div>
 @endsection
 
 
 @section('content')
 
 
+<!-- project section -->
+<div id="project" class="project">
+  <div class="container">
 
+    <div class="titlepage">
+      @isset($category_name)
+      <h2>{{$category_name}}</h2>
+      @endisset
+    
+  </div>
 
-<div class="container p-0 mt-5 mb-5">
-    <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 g-4">
+    <div class="product_main">
+       
       @isset($products)
-      @foreach ($products as $product)
-      <div class="col">
-        <div class="card">
-          <i class="bi bi-heart-fill"></i>
-          <img src="{{$product->image_path}}" class="card-img-top" alt="...">
-          <div class="card-body text-center">
-            <h5 class="card-title">{{$product->name}}</h5>
-            <h4 class="card-text text-danger"> سعر الكيلوا{{$product->price}} ريال</h4>
-            <h4 class="card-text text-danger"> {{$product->details}} </h4>
-            {{-- <button type="button" class="btn btn-outline-primary">Add to cart</button> --}}
-          </div>
+     @foreach ($products as $product)
+
+      <div class="cardu">
+        <img  src="{{$product->image_path}}" alt="Card image cap">
+        <div >
+          <h1 >{{$product->name}}</h1>
+          <p ><span>سعر الكيلو</span>{{$product->price}}&nbsp;<span>ريال</span></p>
+          <a href="{{route('detail',$product->id)}}" class="btn btn-primary">تفاصيل</a>
+          <p  class="btn btn-primary">الهاتف</p>
         </div>
       </div>
-      @endforeach
-        
-      @endisset
-      <div class="float" id="scroller">
+   
+       @endforeach
+       @endisset
+      
+    </div>
+
+
+     
+    </div>
+  </div>
+</div>
+<!-- end project section -->
+
+ <!-- fashion section -->
+ <div class="fashion">
+  <img  src="{{asset('web/asset/images/fashion.jpg')}}" alt="#"/>
+</div>
+<!-- end fashion section -->
+
+ <!-- news section -->
+      
+ <div class="news project">
+  <div class="container">
+     <div class="row">
+        <div class="col-md-12">
+           <div class="titlepage">
+              <h2>Letest News</h2>
+           </div>
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-md-12 margin_top40">
+           <div class="row d_flex">
+              <div class="col-md-5">
+                 <div class="news_img">
+                    <figure><img src="{{asset('web/asset/images/news_img1.jpg')}}"></figure>
+                 </div>
+              </div>
+              <div class="col-md-7">
+                 <div class="news_text">
+                    <h3>Specimen book. It has survived not only five</h3>
+                    <span>7 July 2019</span> 
+                    {{-- <div class="date_like">
+                       <span>Like </span><span class="pad_le">Comment</span>
+                    </div> --}}
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-md-12 margin_top40">
+           <div class="row d_flex">
+              <div class="col-md-5">
+                 <div class="news_img">
+                    <figure><img src="{{asset('web/asset/images/news_img2.jpg')}}"></figure>
+                 </div>
+              </div>
+              <div class="col-md-7">
+                 <div class="news_text">
+                    <h3>Specimen book. It has survived not only five</h3>
+                    <span>7 July 2019</span> 
+                    {{-- <div class="date_like">
+                       <span>Like </span><span class="pad_le">Comment</span>
+                    </div> --}}
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-md-12 margin_top40">
+           <div class="row d_flex">
+              <div class="col-md-5">
+                 <div class="news_img">
+                    <figure><img src="{{asset('web/asset/images/news_img3.jpg')}}"></figure>
+                 </div>
+              </div>
+              <div class="col-md-7">
+                 <div class="news_text">
+                    <h3>Specimen book. It has survived not only five</h3>
+                    <span>7 July 2019</span> 
+                    {{-- <div class="date_like">
+                       <span>Like </span><span class="pad_le">Comment</span>
+                    </div> --}}
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+<!-- end news section -->
+<!-- newslatter section -->
+{{-- <div  class="newslatter project">
+  <div class="container">
+     <div class="row d_flex">
+        <div class="col-md-5">
+           <h3 class="neslatter">Subscribe To The Newsletter</h3>
+        </div>
+        <div class="col-md-7">
+           <form class="news_form">
+              <input class="letter_form" placeholder=" Enter your email" type="text" name="Enter your email">
+              <button class="sumbit">Subscribe</button>
+           </form>
+        </div>
+     </div>
+  </div>
+</div> --}}
+<!-- end newslatter section -->
+
+
+  <div class="float" id="scroller">
         <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-arrow-up my-float" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
         </svg>
@@ -67,59 +182,6 @@
 
 
 
-
-
-{{-- <section style="background-color: #eee;">
-    <div class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6 col-xl-4">
-          <div class="card" style="border-radius: 15px;">
-            <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
-              data-mdb-ripple-color="light">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp"
-                style="border-top-left-radius: 15px; border-top-right-radius: 15px;" class="img-fluid"
-                alt="Laptop" />
-              <a href="#!">
-                <div class="mask"></div>
-              </a>
-            </div>
-            <div class="card-body pb-0">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p><a href="#!" class="text-dark">Dell Xtreme 270</a></p>
-                  <p class="small text-muted">Laptops</p>
-                </div>
-                <div>
-                  <div class="d-flex flex-row justify-content-end mt-1 mb-4 text-danger">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <p class="small text-muted">Rated 4.0/5</p>
-                </div>
-              </div>
-            </div>
-            <hr class="my-0" />
-            <div class="card-body pb-0">
-              <div class="d-flex justify-content-between">
-                <p><a href="#!" class="text-dark">$3,999</a></p>
-                <p class="text-dark">#### 8787</p>
-              </div>
-              <p class="small text-muted">VISA Platinum</p>
-            </div>
-            <hr class="my-0" />
-            <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
-                <a href="#!" class="text-dark fw-bold">Cancel</a>
-                <button type="button" class="btn btn-primary">Buy now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> --}}
   @endsection
 
 
@@ -145,7 +207,6 @@ scroller.addEventListener("click", _=>{
 });
 });
 
- 
 </script>
 
 @endsection

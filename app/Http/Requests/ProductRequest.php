@@ -28,7 +28,7 @@ class ProductRequest extends FormRequest
             'name'=> 'required|string|max:100',
             'category_id'=>'required',
             'price'=>'required|Integer|regex:/^\d+(\.\d{1,2})?$/',
-            'details'=>'string',
+            'details'=>'nullable|string|max:197',
             'discount_price'=>'Integer|regex:/^\d+(\.\d{1,2})?$/',
             
         ];
@@ -38,6 +38,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'required'=>'هذا الحقل مطلوب',
+            'details.max'=>'يجب ان لايزيد عن 197 حرفا',
             'string'=>'الاسم يجب ان يكون احرف',
             'unique'=>'موجود من قبل',
             'required_without'=>'يجب ادخال الصورة',

@@ -78,10 +78,10 @@
                   <td>{{$product->name}}</td>
                   <td><img style="width: 50px; height: 50px;" src="{{$product->image_path}}"></td>
                   <td>{{$product->price}}</td>
-                  <td>{{$product->details}}</td>
+                  <td style="width:20%;height:5%;">{{$product->details}}</td>
                   {{-- <td>{{$product->discount_price}}</td> --}}
                   <td>{{$product->category->name}}</td>
-                  <td>
+                  <td style="width:30%;">
                   
                   <a class="btn btn-info btn-sm" href="{{route('admin.product.edit',$product->id)}}">
                     <i class="fas fa-pencil-alt">

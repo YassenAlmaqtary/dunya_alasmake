@@ -12,16 +12,24 @@ class ProductWebController extends Controller
     
 
     public function getProduct($catgory_id=null){
-               
+        $category_name="الكل";       
         $catgorys = Category::selection()->get();
-        if($catgory_id!=null)
+        if($catgory_id!=null){
          $products = Product::where(['category_id'=>$catgory_id,'statuse'=>'1'])->get();
-         else
+         $category_name=Category::find($catgory_id)->name;
+        }
+         else{
          $products=Product::where('statuse','1')->get();
+         }
           
-        return view('web.product', compact('products','catgorys'));
+        return view('web.product', compact('products','catgorys','category_name'));
 
     } 
+
+    public function show($id){
+        $product=Product::where('id',$id)->select('id','name','image','details')->first(); 
+       return  view('web.detail',compact('product'));
+    }
 
 
 

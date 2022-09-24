@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix'=>'products','namespace'=>'App\Http\Controllers\Web'],function() {
     
-    Route::get('/{category_id?}','ProductWebController@getProduct')->name('product');
+    Route::get('product/{category_id?}','ProductWebController@getProduct')->name('product');
+    Route::get('detail-product/{id}','ProductWebController@show')->name('detail');
 });
 
 // Route::get('/dashboard', function () {

@@ -1,9 +1,43 @@
-<footer class="text-center text-lg-start  header">
-      <!-- Copyright -->
-    <div class="text-center p-0">
-     &copy; <?php echo date("Y"); ?> Copyright:
-      <a class="text-reset fw-bold" href="{{route('product')}}">dunya_alasmak</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
+<!--  footer -->
+<footer>
+  <div class="footer">
+     <div class="container">
+        <div class="row">
+           <div class="col-md-3">
+              <div class="inror_box">
+                 <h3>INFORMATION </h3>
+                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+              </div>
+           </div>
+           <div class="col-md-3">
+              <div class="inror_box">
+                 <h3>MY ACCOUNT </h3>
+                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+              </div>
+           </div>
+           <div class="col-md-3">
+              <div class="inror_box">
+                 <h3>ABOUT  </h3>
+                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+              </div>
+           </div>
+           <div class="col-md-3">
+              <div class="inror_box">
+                 <h3>CONTACTS  </h3>
+                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="copyright">
+        <div class="container">
+           <div class="row">
+              <div class="col-md-12">
+                 <p> &copy; <?php echo date("Y"); ?> : حقوق الطبع محفوظة لدى<a href="{{route('product')}}">دنيا الاسماك</a></p>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</footer>
+<!-- end footer -->
