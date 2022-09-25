@@ -65,7 +65,28 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware' => 'auth:ad
             Route::post('customer/destroy','CustomerController@destroy')->name('admin.customer.delete');
             Route::post('customer/changeStatusProduct','CustomerController@changeStause')->name('customerStatus');
            });    
-           //##################### end customer ######################
+           //##################### end customer ######################//
+
+           
+       //##################### bagin apout ######################//
+
+        Route::group(['prefix' => 'apouts'], function () {
+          Route::resource('apout', 'AboutController', [
+           'names' => [
+               'create' => 'admin.apout.create',
+               'index' => 'admin.apout',
+              'store' => 'admin.apout.store',
+              'edit' => 'admin.apout.edit',
+              'update' => 'admin.apout.update',
+              'show'=>'admin.apout.show',
+             // 'destroy' => 'admin.apout.delete',       
+              ] 
+            ]);
+            Route::post('apout/destroy','AboutController@destroy')->name('admin.apout.delete');
+            Route::post('apout/changeStatusaput','AboutController@changeStause')->name('apoutStatus');
+           });    
+           //##################### end apout ######################//
+
     
 });
 

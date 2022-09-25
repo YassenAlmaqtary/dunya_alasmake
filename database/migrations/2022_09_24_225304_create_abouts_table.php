@@ -19,7 +19,9 @@ class CreateAboutsTable extends Migration
             $table->text('vision_details')->nullable(true);
             $table->string('objectives')->nullable(true);
             $table->text('objectives_details')->nullable(true);
-            
+            $table->string('Aboutus')->nullable(true);
+            $table->text('Aboutus_details')->nullable(true);
+
             $table->timestamps();
         });
     }
