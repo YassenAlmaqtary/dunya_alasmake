@@ -2,6 +2,9 @@
 
 
 /*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
+*{
+  direction:rtl;   
+}
 
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
@@ -298,7 +301,7 @@ ul.social_icon li {
 }
 
 ul.social_icon li:last-child {
-     padding-right: 0px;
+     padding-left: 0px;
 }
 
 ul.social_icon li a {
@@ -306,7 +309,7 @@ ul.social_icon li a {
      width: 30px;
      height: 30px;
      background-color: #183661;
-     float: left;
+     float:right;
      text-align: center;
      line-height: 31px;
      border-radius: 100%;
@@ -337,7 +340,7 @@ ul.social_icon li a:hover {
      top: 0;
      padding: 5px 0;
      opacity: 0;
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+     filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
      background: none transparent;
      border: 0 none;
 }
@@ -443,7 +446,7 @@ ul.right_icon li img {
 }
 
 .navigation.navbar {
-     float: left;
+     float:right;
      padding: 0;
 }
 
@@ -474,7 +477,7 @@ ul.right_icon li img {
 
 .search {
      padding: 24px 0;
-     text-align: right;
+     text-align:left;
 }
 
 .form_sea {
@@ -489,7 +492,7 @@ ul.right_icon li img {
 
 .seach_icon {
      position: absolute;
-     margin-left: -25px;
+     margin-right: -25px;
      z-index: 999;
      background: transparent;
      padding: 3px 0px 0px 0px;
@@ -567,6 +570,7 @@ position: absolute;
 /** end banner section **/
 
 .titlepage h2 {
+     text-align: start;
      font-size: 35px;
      color: #141414;
      line-height: 40px;
@@ -928,13 +932,17 @@ margin: 0 15px 20px 15px;
   
 
 }
+.footer .inror_box{
+ width:20%;
+ height:20%;
+}
 
 .footer h3 {
      color: #fff;
      font-size: 20px;
      line-height: 20px;
      text-transform: uppercase;
-     text-align: left;
+     text-align:start;
      padding-bottom: 20px;
      font-weight: 600;
 }
@@ -942,9 +950,9 @@ margin: 0 15px 20px 15px;
 .footer p {
      color: #fff;
      font-size: 17px;
-     line-height: 32px;
-     text-align: left;
-     padding-right: 31px;
+     line-height:32px;
+     text-align:start;
+     padding-left: 31px;
      font-weight: 400;
      display: inline-block;
 }

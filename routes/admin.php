@@ -87,6 +87,26 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware' => 'auth:ad
            });    
            //##################### end apout ######################//
 
+
+        //##################### bagin article  ######################//
+
+        Route::group(['prefix' => 'article'], function () {
+          Route::resource('article', 'ArticleController', [
+           'names' => [
+               'create' => 'admin.article.create',
+               'index' => 'admin.article',
+              'store' => 'admin.article.store',
+              'edit' => 'admin.article.edit',
+              'update' => 'admin.article.update',
+              'show'=>'admin.article.show',
+             // 'destroy' => 'admin.apout.delete',       
+              ] 
+            ]);
+            Route::post('article/destroy','ArticleController@destroy')->name('admin.article.delete');
+            Route::post('article/changeStatusaput','ArticleController@changeStause')->name('articleStatus');
+           });    
+           //##################### end article ######################//
+
     
 });
 

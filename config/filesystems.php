@@ -53,7 +53,10 @@ return [
             'driver' => 'local',
             'root' => public_path().'/dashboard/uploads/customers',
         ],
-
+        'articles'=>[
+            'driver' => 'local',
+            'root' => public_path().'/dashboard/uploads/articles',
+        ],
 
         's3' => [
             'driver' => 's3',

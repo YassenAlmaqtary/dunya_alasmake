@@ -7,7 +7,7 @@
 @endsection
 @section('categorys')
 
-<div class="btn-group">
+<div class="btn-group" style="direction:ltr;">
   <button type="button" class="btn btn_catgory dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     الاقسام
   </button>
@@ -22,14 +22,14 @@
 </div>
 @endsection
 
-@section('search')
-< <div class="search">
+{{-- @section('search')
+ <div class="search">
   <form action="#">
      <input class="form_sea" type="text" placeholder="Search" name="search">
      <button type="submit" class="seach_icon"><i class="fa fa-search"></i></button>
   </form>
 </div>
-@endsection
+@endsection --}}
 
 
 @section('content')
@@ -91,63 +91,29 @@
         </div>
      </div>
      <div class="row">
+        @foreach ($articles as $article)
         <div class="col-md-12 margin_top40">
-           <div class="row d_flex">
-              <div class="col-md-5">
-                 <div class="news_img">
-                    <figure><img src="{{asset('web/asset/images/news_img1.jpg')}}"></figure>
-                 </div>
-              </div>
-              <div class="col-md-7">
-                 <div class="news_text">
-                    <h3>Specimen book. It has survived not only five</h3>
-                    <span>7 July 2019</span> 
-                    {{-- <div class="date_like">
-                       <span>Like </span><span class="pad_le">Comment</span>
-                    </div> --}}
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                 </div>
-              </div>
-           </div>
-        </div>
-        <div class="col-md-12 margin_top40">
-           <div class="row d_flex">
-              <div class="col-md-5">
-                 <div class="news_img">
-                    <figure><img src="{{asset('web/asset/images/news_img2.jpg')}}"></figure>
-                 </div>
-              </div>
-              <div class="col-md-7">
-                 <div class="news_text">
-                    <h3>Specimen book. It has survived not only five</h3>
-                    <span>7 July 2019</span> 
-                    {{-- <div class="date_like">
-                       <span>Like </span><span class="pad_le">Comment</span>
-                    </div> --}}
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                 </div>
-              </div>
-           </div>
-        </div>
-        <div class="col-md-12 margin_top40">
-           <div class="row d_flex">
-              <div class="col-md-5">
-                 <div class="news_img">
-                    <figure><img src="{{asset('web/asset/images/news_img3.jpg')}}"></figure>
-                 </div>
-              </div>
-              <div class="col-md-7">
-                 <div class="news_text">
-                    <h3>Specimen book. It has survived not only five</h3>
-                    <span>7 July 2019</span> 
-                    {{-- <div class="date_like">
-                       <span>Like </span><span class="pad_le">Comment</span>
-                    </div> --}}
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                 </div>
-              </div>
-           </div>
-        </div>
+         <div class="row d_flex">
+            <div class="col-md-5">
+               <div class="news_img">
+                  <figure><img style="width: 70%;height:70%;" src="{{$article->image_path}}"></figure>
+               </div>
+            </div>
+            <div class="col-md-7">
+               <div class="news_text">
+                  <h3>{{$article->title}}</h3>
+                  <span>{{$article->updated_at}}</span> 
+                  {{-- <div class="date_like">
+                     <span>Like </span><span class="pad_le">Comment</span>
+                  </div> --}}
+                  <p>{{$article->article_details}}</p>
+               </div>
+            </div>
+         </div>
+      </div>
+        @endforeach
+       
+       
      </div>
   </div>
 </div>

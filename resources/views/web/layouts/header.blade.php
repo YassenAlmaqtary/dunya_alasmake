@@ -73,15 +73,15 @@
                                <a class="nav-link" href="{{route('product')}}">الرئيسية</a>
                             </li>
                             @yield('categorys')
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                <a class="nav-link" href="#">نبذة عنا</a>
-                            </li>
+                            </li> --}}
                             {{-- <li class="nav-item">
                                <a class="nav-link" href="#">Fashion</a>
                             </li> --}}
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                <a class="nav-link" href="#">اخبارنا</a>
-                            </li>
+                            </li> --}}
                             {{-- <li class="nav-item">
                                <a class="nav-link" href="#">Contact Us</a>
                             </li> --}}

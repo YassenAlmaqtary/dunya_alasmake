@@ -1,8 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    عرض المنتجات
-@endsection
+    عرض الوصف
 
 @section('css')
     <!-- DataTables -->
@@ -18,11 +17,7 @@
 @endsection
 
 @section('page_title1')
-  عرض المنتجات
-@endsection
-
-@section('page_title2')
-<a href="{{route('admin.product.create')}}">اضافة منتج</a>
+  عرض الوصف
 @endsection
 
 @section('content')
@@ -47,7 +42,7 @@
           </div>
           <div class="modal-footer justify-content-between">
             <button type="button" class="btn btn-outline-light" data-dismiss="modal">تراجع</button>
-            <button type="button" id="save-chaing" onclick="deletItem('{{route('admin.product.delete')}}',event)" class="btn btn-outline-light">حفظ التغيرات</button>
+            <button type="button" id="save-chaing" onclick="deletItem('{{route('admin.apout.delete')}}',event)" class="btn btn-outline-light">حفظ التغيرات</button>
           </div>
         </div>
         <!-- /.modal-content -->
@@ -56,72 +51,64 @@
     </div>
     <!-- /.modal -->
     <div class="row">
-      <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-          <tr>
-          
-            <th>الاسم</th>
-            <th>الصورة</th>
-            <th>سعر الكيلو</th>
-            <th>التفاصيل</th>
-            {{-- <th>التخفيظ</th> --}}
-            <th>القسم</th>
-            <th>العمليات</th>
-          </tr>
-          </thead>
-          <tbody>
-              @isset($products)
-              @foreach ($products as $product)
+        <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
               <tr>
-                  
-                  <td>{{$product->name}}</td>
-                  <td><img style="width: 50px; height: 50px;" src="{{$product->image_path}}"></td>
-                  <td>{{$product->price}}</td>
-                  <td style="width:20%;height:5%;">{{$product->details}}</td>
-                  {{-- <td>{{$product->discount_price}}</td> --}}
-                  <td>{{$product->category->name}}</td>
-                  <td style="width:30%;">
-                  
-                  <a class="btn btn-info btn-sm" href="{{route('admin.product.edit',$product->id)}}">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    تعديل
-                  </a>
-  
-                <a class="btn btn-danger btn-sm" href="#" onclick="setIDItem({{$product->id}})" data-toggle="modal" data-target="#modal-danger">
-                  <i class="fas fa-trash">
-                  </i>
-                  حذف
-                 </a>
-            
-                  <input type="checkbox" onchange="clickFn({statu:`${statu=this.checked?'1':'0'}`,product_id:`${this.value}`},
-                  '{{route('productStatus')}}')" value="{{$product->id}}" data-toggle="switchbutton" data-onlabel="مفعل" data-offlabel="غير مفعل"@if ($product->statuse)
-                   checked 
-                   @endif 
-                  data-onstyle="success" data-offstyle="danger"
-                  data-size="sm" >              
-                  </td>
-                </tr>
-              @endforeach
-                @endisset 
-          </tbody>
-          <tfoot>
-          <tr>
-            
-              <th>الاسم</th>
-              <th>الصورة</th>
-              <th>سعر الكيلو</th>
-              <th>التفاصيل</th>
-              {{-- <th>التخفيظ</th> --}}
-              <th>القسم</th>
-              <th>العمليات</th>
-           
-          </tr>
-          </tfoot>
-        </table>
-      </div>
-      <!-- /.card-body -->
+              
+                <th>الرؤية</th>
+                <th>الهدف</th>
+                <th>نبذة عنا</th>
+                <th>العمليات</th>
+              </tr>
+              </thead>
+              <tbody>
+                  @isset($abouts)
+                  @foreach ($abouts as $about)
+                  <tr>
+                      
+                      <td style="width:20%;height:5%;">{{$about->vision_details}}</td>
+      
+                      <td style="width:20%;height:5%;">{{$about->objectives_details}}</td>
+                      <td style="width:20%;height:5%;">{{$about->Aboutus_details}}</td>
+    
+                      <td>
+                      
+                          <a class="btn btn-info btn-sm" href="{{route('admin.apout.edit',$about->id)}}">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            تعديل
+                          </a>
+          
+                        <a class="btn btn-danger btn-sm" href="#" onclick="setIDItem({{$about->id}})" data-toggle="modal" data-target="#modal-danger">
+                          <i class="fas fa-trash">
+                          </i>
+                          حذف
+                         </a>
+                    
+                          <input type="checkbox" onchange="clickFn({statu:`${statu=this.checked?'1':'0'}`,about_id:`${this.value}`},
+                          '{{route('apoutStatus')}}')" value="{{$about->id}}" data-toggle="switchbutton" data-onlabel="مفعل" data-offlabel="غير مفعل"@if ($about->status)
+                           checked 
+                           @endif 
+                          data-onstyle="success" data-offstyle="danger"
+                          data-size="sm">              
+                        </td>
+                    </tr>
+                  @endforeach
+                  @endisset 
+              </tbody>
+              <tfoot>
+              <tr>
+                
+                <th>الرؤية</th>
+                <th>الهدف</th>
+                <th>نبذة عنا</th>
+                <th>العمليات</th>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.card-body -->
     </div>
   </div>
  

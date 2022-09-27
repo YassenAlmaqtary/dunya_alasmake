@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryRequest extends FormRequest
+class ArticeRequset extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,9 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'icon' => 'mimes:jpg,jpeg,png,svg',
-            'name'=>'required|string|max:100'
-            
+            'title'=>'required|string|max:50',
+            'article_details'=>'required|string|max:100',
+            'image'=> 'mimes:jpg,jpeg,png,svg',
         ];
     }
 
@@ -34,12 +34,9 @@ class CategoryRequest extends FormRequest
     {
         return [
             'required'=>'هذا الحقل مطلوب',
+            'article_details.max'=>'تجاوزت الحد المسموح من الكتابة',
             'string'=>'الاسم يجب ان يكون احرف',
-            'regex'=>'يجب ان يكون حروف',
-            'max'=>'يجب ان يكون  الحوف اقل من 100'
 
         ];
     }
 }
-
-

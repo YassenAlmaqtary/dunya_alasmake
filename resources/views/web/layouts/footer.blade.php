@@ -3,28 +3,22 @@
   <div class="footer">
      <div class="container">
         <div class="row">
-           <div class="col-md-3">
+           <div class="col-md-4">
               <div class="inror_box">
-                 <h3>INFORMATION </h3>
-                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+                 <h3>الاهداف</h3>
+                 <p>{{App\Models\About::selection()->first()->objectives_details}}</p>
               </div>
            </div>
-           <div class="col-md-3">
+           <div class="col-md-4">
               <div class="inror_box">
-                 <h3>MY ACCOUNT </h3>
-                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+                 <h3>الرؤية</h3>
+                 <p>{{App\Models\About::selection()->first()->vision_details}}</p>
               </div>
            </div>
-           <div class="col-md-3">
+           <div class="col-md-4">
               <div class="inror_box">
-                 <h3>ABOUT  </h3>
-                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-              </div>
-           </div>
-           <div class="col-md-3">
-              <div class="inror_box">
-                 <h3>CONTACTS  </h3>
-                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+                 <h3>نبذة عنا</h3>
+                 <p>{{App\Models\About::selection()->first()->Aboutus_details}}</p>
               </div>
            </div>
         </div>

@@ -103,7 +103,7 @@
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
-                   العملااء
+                  العملااء
                   <i class="fas fa-angle-left right"></i>
                   <span class="badge badge-info right">{{App\Models\Customer::count()}}</span>
                 </p>
@@ -123,6 +123,57 @@
                 </li>
               </ul>
             </li>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                حولننا
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">{{App\Models\About::count()}}</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('admin.apout.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>اضافة وصف</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.apout')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>عرض وصف</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                المقالات
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">{{App\Models\Article::count()}}</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('admin.article.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>اضافة مقالة</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.article')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>عرض المقالة</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="./index.html" class="nav-link active">

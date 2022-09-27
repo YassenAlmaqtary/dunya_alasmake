@@ -10,12 +10,10 @@ class About extends Model
     use HasFactory;
     protected $fillable =  [
         'id',
-        'vision',
         'vision_details',
-        'objectives',
         'objectives_details',
-        'Aboutus',
         'Aboutus_details',
+        'status',
         'created_at',
         'updated_at'
     ] ;
@@ -24,5 +22,7 @@ class About extends Model
         'created_at',
         'updated_at'
     ];
-
+    public function scopeSelection($qury){
+        return $qury->select('id','vision_details', 'objectives_details','Aboutus_details',);
+    }
 }    
