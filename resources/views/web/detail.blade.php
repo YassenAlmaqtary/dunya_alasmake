@@ -6,6 +6,8 @@
 @section('css')
   <link rel="stylesheet" href="{{asset('web/asset/product.css')}}">
 @endsection
+
+
 @section('content')
 
 <div class="blue_bg">

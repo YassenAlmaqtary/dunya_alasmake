@@ -1,4 +1,9 @@
-  <!-- header -->
+<?php 
+use App\Models\Category;
+$catgorys=Category::aLL();
+?>
+
+<!-- header -->
   <header>
     <!-- header inner -->
     <div class="header">
@@ -10,16 +15,7 @@
                       <li><a href="#"><img src="{{asset('web/asset/images/call.png')}}" alt="#"/>Call us:+967772003973</a> </li>
                    </ul>
                 </div>
-                <div class="col-md-4">
-                   <ul class="social_icon">
-                      <li> <a href="https://www.facebook.com/profile.php?id=100054553655426"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                      <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li> <a href="#"> <i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                      <li> <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
-                         </a>
-                      </li>
-                   </ul>
-                </div>
+                
                 <div class="col-md-4">
                    <div class="se_fonr1">
                       {{-- <form action="#" >
@@ -53,12 +49,13 @@
                 <div class="col-md-4">
                    {{-- <ul class="right_icon d_none1">
                       <li><a href="#"><img src="{{asset('web/asset/images/shopping.png')}}" alt="#"/></a> </li>
-                      <a href="#" class="order">Order Now</a> 
+                      <a href="#" class="order">Order Now</a>  
                    </ul> --}}
                 </div>
              </div>
           </div>
        </div>
+       
        <div class="header_bottom">
           <div class="container">
              <div class="row">
@@ -72,10 +69,25 @@
                             <li class="nav-item active">
                                <a class="nav-link" href="{{route('product')}}">الرئيسية</a>
                             </li>
-                            @yield('categorys')
-                            {{-- <li class="nav-item">
-                               <a class="nav-link" href="#">نبذة عنا</a>
-                            </li> --}}
+                            <div class="btn-group" style="direction:ltr;">
+                              <button type="button" class="btn btn_catgory dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                الاقسام
+                              </button>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{route('product')}}">الكل</a>
+                                @isset($catgorys)
+                                @foreach ($catgorys as $category )
+                                <a class="dropdown-item" href="{{route('product',$category->id)}}">{{$category->name}}</a>
+                                @endforeach
+                                @endisset
+                              </div>
+                            </div>
+                            <li class="nav-item">
+                               <a class="nav-link" href="{{route('article')}}">المقالات</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{route('contact-us.create')}}">تواصل معنا</a>
+                           </li>
                             {{-- <li class="nav-item">
                                <a class="nav-link" href="#">Fashion</a>
                             </li> --}}

@@ -15,8 +15,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix'=>'products','namespace'=>'App\Http\Controllers\Web'],function() {
     
-    Route::get('product/{category_id?}','ProductWebController@getProduct')->name('product');
+    Route::get('product/{category_id?}','ProductWebController@getProduct')->name('product')->middleware('traffic');
     Route::get('detail-product/{id}','ProductWebController@show')->name('detail');
+    Route::get('article','ProductWebController@article')->name('article');
+    Route::get('contact-us','ProductWebController@getContact')->name('contact');
+    Route::resource('contact-us','ContactController', [
+        'names' => [
+            'index' => 'contact-us',
+            'create' => 'contact-us.create',
+            'store' => 'contact-us.store',
+            'edit' => 'contact-us.edit',
+            'update' => 'contact-us.update',
+            //'destroy' => 'contact-us.delete',
+            
+            ]      
+      ]);
+
+
 });
 
 // Route::get('/dashboard', function () {

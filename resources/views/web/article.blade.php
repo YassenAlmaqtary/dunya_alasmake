@@ -4,60 +4,10 @@
 @endsection
 @section('css')
   <link rel="stylesheet" href="{{asset('web/asset/product.css')}}">
- 
 @endsection
-
-{{-- @section('search')
- <div class="search">
-  <form action="#">
-     <input class="form_sea" type="text" placeholder="Search" name="search">
-     <button type="submit" class="seach_icon"><i class="fa fa-search"></i></button>
-  </form>
-</div>
-@endsection --}}
 
 
 @section('content')
-
-
-<!-- project section -->
-<div id="project" class="project">
-  <div class="container">
-
-    <div class="titlepage">
-      @isset($category_name)
-      <h2>{{$category_name}}</h2>
-      @endisset
-  </div>
-
-    <div class="product_main">
-       
-      @isset($products)
-     @foreach ($products as $product)
-
-      <div class="cardu">
-        <img  src="{{$product->image_path}}" alt="Card image cap">
-        <div >
-          <h1 >{{$product->name}}</h1>
-          <p ><span>سعر الكيلو</span>{{$product->price}}&nbsp;<span>ريال</span></p>
-          <a href="{{route('detail',$product->id)}}" class="btn btn-primary">تفاصيل</a>
-          <p  class="btn btn-primary">الهاتف</p>
-        </div>
-      </div>
-   
-       @endforeach
-       @endisset
-      
-    </div>
-
-
-     
-    </div>
-  </div>
-</div>
-<!-- end project section -->
-
-
 
  <!-- news section -->
       
@@ -152,6 +102,7 @@ scroller.addEventListener("click", _=>{
   behavior: 'smooth'
 });
 });
+
 </script>
 
 @endsection

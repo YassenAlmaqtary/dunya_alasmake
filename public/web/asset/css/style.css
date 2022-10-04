@@ -45,8 +45,9 @@
 
 * {
      box-sizing: border-box !important;
-     clear: both !important;
+     /* clear: both !important; */
 }
+
 
 html {
      scroll-behavior: smooth;
@@ -58,6 +59,11 @@ body {
      font-family: 'Poppins', sans-serif;
      line-height: 1.80857;
      font-weight: normal;
+}
+.carousel img{
+     height:300px;
+     width: 400px;
+     
 }
 
 a {
@@ -286,6 +292,7 @@ ul.conta_icon li a img {
 }
 
 ul.social_icon {
+     margin-top:10%;
      display: flex;
      justify-content: center;
      flex-wrap: wrap;

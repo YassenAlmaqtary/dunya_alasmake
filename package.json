@@ -20,6 +20,8 @@
         "tailwindcss": "^3.1.0"
     },
     "dependencies": {
-        "mix": "^0.0.1"
+        "laravel-echo": "^1.14.0",
+        "mix": "^0.0.1",
+        "socket.io-client": "^2.4.50"
     }
 }
