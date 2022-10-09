@@ -31,7 +31,7 @@
   .then(function (json) {
       // Check if the response were success
       if (fetch_status == 200) {
-         // console.log(json);
+          //console.log(json);
           window.location.reload();
   
       }

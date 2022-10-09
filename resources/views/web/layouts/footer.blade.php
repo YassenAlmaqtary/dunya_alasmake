@@ -27,6 +27,7 @@
                <div class="col-md-12">
                   <ul class="social_icon">
                      <li> <a href="https://www.facebook.com/profile.php?id=100054553655426"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                     <li> <a href="#"><i class="bi bi-whatsapp"></i></a></li>
                      <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
                      <li> <a href="#"> <i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                      <li> <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i>

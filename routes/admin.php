@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LoginController;
-
-
+use App\Http\Controllers\Admin\SubscriptController;
 
 Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware' => 'auth:admin'], function () {
 
@@ -106,6 +105,18 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware' => 'auth:ad
             Route::post('article/changeStatusaput','ArticleController@changeStause')->name('articleStatus');
            });    
            //##################### end article ######################//
+
+
+          //##################### bigin subscript ######################//
+          Route::group(['prefix' => 'subscript'], function () {
+            Route::get('subscripts','SubscriptController@index')->name('admin.subscript');
+            Route::post('subscript/destroy','SubscriptController@destroy')->name('admin.subscript.delete');
+            Route::get('subscript/{id}','SubscriptController@show')->name('admin.subscript.show');
+
+          });
+           //##################### end subscript ######################//
+
+
 
     
 });

@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    عرض المقالات
+    عرض الرسائل
 @endsection
 
 @section('css')
@@ -18,12 +18,12 @@
 @endsection
 
 @section('page_title1')
-  عرض المقالات
+  عرض الرسائل
 @endsection
 
-@section('page_title2')
+{{-- @section('page_title2')
 <a href="{{route('admin.article.create')}}">اضافة مقالة</a>
-@endsection
+@endsection --}}
 
 @section('content')
 @include('admin.alerts.success')
@@ -47,7 +47,7 @@
           </div>
           <div class="modal-footer justify-content-between">
             <button type="button" class="btn btn-outline-light" data-dismiss="modal">تراجع</button>
-            <button type="button" id="save-chaing" onclick="deletItem('{{route('admin.article.delete')}}',event)" class="btn btn-outline-light">حفظ التغيرات</button>
+            <button type="button" id="save-chaing" onclick="deletItem('{{route('admin.subscript.delete')}}',event)" class="btn btn-outline-light">حفظ التغيرات</button>
           </div>
         </div>
         <!-- /.modal-content -->
@@ -60,50 +60,44 @@
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
-          
-            <th>عنوان المقالة</th>
-            <th>التفاصيل المقالة</th>
-            <th>الصورة</th>
+            <th>الاسم</th>
+            <th>الهاتف</th>
+            <th>العنوان</th>
+            <th>الايميل</th>
+            <th>التفاصيل الرسالة</th>
             <th>العمليات</th>
           </tr>
           </thead>
           <tbody>
-              @isset($articles)
-              @foreach ($articles as $article)
+              @isset($subscripts)
+              @foreach ($subscripts as $subscript)
               <tr>
-                  <td>{{$article->title}}</td>
-                  <td style="width:20%;height:5%;">{{$article->article_details}}</td>
-                  <td><img style="width: 50px; height: 50px;" src="{{$article->image_path}}"></td>            
+                  <td>{{$subscript->name}}</td>
+                  <td>{{$subscript->phone}}</td>
+                  <td>{{$subscript->address}}</td>
+                  <td>{{$subscript->email}}</td>
+                  <td style="width:20%;height:5%;">{{$subscript->message}}</td>
+                            
                   <td style="width:30%;">
                   
-                  <a class="btn btn-info btn-sm" href="{{route('admin.article.edit',$article->id)}}">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    تعديل
-                  </a>
   
-                <a class="btn btn-danger btn-sm" href="#" onclick="setIDItem({{$article->id}})" data-toggle="modal" data-target="#modal-danger">
+                <a class="btn btn-danger btn-sm" href="#" onclick="setIDItem({{$subscript->id}})" data-toggle="modal" data-target="#modal-danger">
                   <i class="fas fa-trash">
                   </i>
                   حذف
-                 </a>
-            
-                  <input type="checkbox" onchange="clickFn({statu:`${statu=this.checked?'1':'0'}`,article_id:`${this.value}`},
-                  '{{route('articleStatus')}}')" value="{{$article->id}}" data-toggle="switchbutton" data-onlabel="مفعل" data-offlabel="غير مفعل"@if ($article->status)
-                   checked 
-                   @endif 
-                  data-onstyle="success" data-offstyle="danger"
-                  data-size="sm" >              
+                 </a>            
                   </td>
                 </tr>
               @endforeach
-                @endisset 
+             @endisset 
           </tbody>
           <tfoot>
           <tr>
-            <th>عنوان المقالة</th>
-            <th>التفاصيل المقالة</th>
-            <th>الصورة</th>
+            <th>الاسم</th>
+            <th>الهاتف</th>
+            <th>العنوان</th>
+            <th>الايميل</th>
+            <th>التفاصيل الرسالة</th>
             <th>العمليات</th>
            
           </tr>

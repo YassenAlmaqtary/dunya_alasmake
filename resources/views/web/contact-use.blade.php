@@ -34,6 +34,8 @@
          </div>
       </div>
       <!-- contact section -->
+      @include('admin.alerts.success')
+     @include('admin.alerts.errors') 
       <div id="contact" class="contact" style="margin:4%">
          <div class="con_bg">
             <div class="container">
@@ -43,19 +45,34 @@
                         @csrf
                         <div class="row">
                            <div class="col-md-6 col-sm-6">
-                              <input class="contactus" placeholder="الاسم" type="text" name="name"> 
+                              <input class="contactus" placeholder="الاسم" type="text" name="name">
+                              @error('name')
+                               <span class="text-danger">{{$message}}</span>
+                              @enderror 
                            </div>
                            <div class="col-md-6 col-sm-6">
                               <input class="contactus" placeholder="رقم الهاتف" type="text" name="phone"> 
+                              @error('phone')
+                              <span class="text-danger">{{$message}}</span>
+                             @enderror 
                            </div>
                            <div class="col-md-6 col-sm-6">
-                              <input class="contactus" placeholder="الايميل" type="email" name="email">                          
+                              <input class="contactus" placeholder="الايميل" type="email" name="email">
+                              @error('email')
+                              <span class="text-danger">{{$message}}</span>
+                             @enderror                           
                            </div>
                            <div class="col-md-6 col-sm-6">
-                              <input class="contactus" placeholder="العنوان" type="text" name="address">                          
+                              <input class="contactus" placeholder="العنوان" type="text" name="address"> 
+                              @error('address')
+                              <span class="text-danger">{{$message}}</span>
+                             @enderror                          
                            </div>
                            <div class="col-md-12">
                               <input class="contactusmess" placeholder="الرسالة" type="text" Message="message" name="message">
+                              @error('message')
+                              <span class="text-danger">{{$message}}</span>
+                             @enderror 
                            </div>
                            <div class="col-md-12">
                               <button class="send_btn">Send</button>

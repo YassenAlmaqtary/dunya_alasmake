@@ -19,11 +19,11 @@ class SubscriptBoradcust implements ShouldBroadcast
      *
      * @return void
      */
-    public $message;
+    public $subscript;
 
-    public function __construct($message)
+    public function __construct($subscript)
     { 
-        $this->message=$message;
+        $this->subscript=$subscript;
     }
 
     /**

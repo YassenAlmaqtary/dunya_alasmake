@@ -44,6 +44,11 @@ $catgorys=Category::aLL();
                    </ul>
                 </div>
                 <div class="col-md-4">
+                  <div class="square"><h2>عدد الزوار <span> {{App\Models\Traffic::count()}} زائر</span></h2>
+                  </div>
+                  
+               </div>
+                <div class="col-md-4">
                    <a class="logo" href="#"><img src="{{asset('web/asset/images/logo.jpg')}}" alt="#"/></a>
                 </div>
                 <div class="col-md-4">

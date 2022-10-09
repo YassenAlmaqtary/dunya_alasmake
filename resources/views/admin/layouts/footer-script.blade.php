@@ -32,4 +32,10 @@
 <script src="{{asset('dashboard/assets/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('dashboard/assets/dist/js/pages/dashboard.js')}}"></script>
+
+<!--laravel echo and  socketio-->
+<script>window.laravel_echo_port='{{env("LARAVEL_ECHO_PORT")}}';</script>
+<script src="//{{ Request::getHost()}}:{{env('LARAVEL_ECHO_PORT')}}/socket.io/socket.io.js"></script>
+<script src="{{ url('js/app.js') }}" type="text/javascript"></script>
+<script src="{{asset('dashboard/assets/js/subscript-message.js')}}"></script>
 @yield('scripts')

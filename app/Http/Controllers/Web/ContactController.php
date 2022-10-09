@@ -4,11 +4,12 @@ namespace App\Http\Controllers\web;
 
 use App\Events\SubscriptBoradcust;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SubscriptRequset;
 use App\Models\Subscript;
-use App\Notifications\SubScriptNotifiction;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Redirect;
 
 class ContactController extends Controller
 {
@@ -40,20 +41,34 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SubscriptRequset $request)
     {
         try{
             $data=$request->except('_token');
-           $subscript= Subscript::create($data);
-        
-            //event(new SubscriptBoradcust($request->all()));
-        
-           Notification::send($subscript, new SubScriptNotifiction($subscript));
-            
-
+           $data= Subscript::create($data);
+           $array=[
+            'id'=>$data->id,
+            'name'=>$data->name,
+            'phone'=>$data->phone,
+            'email'=>$data->email,
+            'address'=>$data->address,
+            'message'=>$data->message,
+            'time'=>time_elapsed_string($data->updated_at),
+            'created_at'=>$data->created_at,
+            'updated_at'=>$data->updated_at,
+            'count'=>Subscript::count(),
+            'icon'=>asset('dashboard/assets/img/messages-icon.png'),
+            'route'=>route('admin.subscript.show',$data->id),
+        ];
+        // Convert array into an object
+        $subscript = json_decode(json_encode($array));
+        event(new SubscriptBoradcust($subscript));
+       ///Notification::send($subscript, new SubScriptNotifiction($subscript));
+       return Redirect::back()->with(['success' => 'تم ارسال تعليقك بنجاح']);
         }
         catch(Exception $exp){
-            return $exp;
+            return Redirect::back()->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            
         }
     }
 
