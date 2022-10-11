@@ -39,9 +39,7 @@
            <div class="carousel-item">
              <img src="{{asset('web/asset/images/logo.jpg')}}" class="d-block w-100" alt="...">
            </div>
-           <div class="carousel-item">
-             <img src="{{asset('web/asset/images/call.png')}}" class="d-block w-100" alt="...">
-           </div>
+          
          </div>
        </div>
 

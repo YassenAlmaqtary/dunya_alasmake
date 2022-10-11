@@ -10,11 +10,11 @@ $catgorys=Category::aLL();
        <div class="header_top">
           <div class="container">
              <div class="row">
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                    <ul class="conta_icon">
                       <li><a href="#"><img src="{{asset('web/asset/images/call.png')}}" alt="#"/>Call us:+967772003973</a> </li>
                    </ul>
-                </div>
+                </div> --}}
                 
                 <div class="col-md-4">
                    <div class="se_fonr1">
@@ -40,7 +40,8 @@ $catgorys=Category::aLL();
              <div class="row d_flex">
                 <div class="col-md-4">
                    <ul class="conta_icon d_none1">
-                      <li><a href="#"><img src="{{asset('web/asset/images/email.png')}}" alt="#"/> demo@gmail.com</a> </li>
+                      {{-- <li><a href="#"><img src="{{asset('web/asset/images/email.png')}}" alt="#"/> demo@gmail.com</a> </li> --}}
+                      <li><a href="#"><img src="{{asset('web/asset/images/call.png')}}" alt="#"/>Call us:+967772003973</a> </li>
                    </ul>
                 </div>
                 <div class="col-md-4">
@@ -50,6 +51,7 @@ $catgorys=Category::aLL();
                </div>
                 <div class="col-md-4">
                    <a class="logo" href="#"><img src="{{asset('web/asset/images/logo.jpg')}}" alt="#"/></a>
+                   <h3>دنيــــــا الاســــــماك  .  Dunya alasmak</h3>
                 </div>
                 <div class="col-md-4">
                    {{-- <ul class="right_icon d_none1">
