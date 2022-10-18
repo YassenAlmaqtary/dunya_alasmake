@@ -57,6 +57,10 @@ return [
             'driver' => 'local',
             'root' => public_path().'/dashboard/uploads/articles',
         ],
+        'cooks'=>[
+            'driver' => 'local',
+            'root' => public_path().'/dashboard/uploads/cooks',
+        ],
 
         's3' => [
             'driver' => 's3',

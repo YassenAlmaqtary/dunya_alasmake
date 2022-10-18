@@ -15,13 +15,46 @@
   </form>
 </div>
 @endsection --}}
+@section('slider')
+ 
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{{asset('web/asset/images/logo.jpg')}}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{asset('web/asset/images/fashion.jpg')}}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{asset('web/asset/images/fashion2.jpg')}}" alt="Third slide">
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img class="d-block w-100" src="{{asset('web/asset/images/fashion3.png')}}" alt="Third slide">
+  </div>
+</div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
+
+@endsection
 
 @section('content')
 
-
 <!-- project section -->
-<div id="project" class="project">
+<div id="project" style="margin-top: 2%;">
   <div class="container">
 
     <div class="titlepage">
@@ -40,8 +73,8 @@
         <div >
           <h1 >{{$product->name}}</h1>
           <p ><span>سعر الكيلو</span>{{$product->price}}&nbsp;<span>ريال</span></p>
-          <a href="{{route('detail',$product->id)}}" class="btn btn-primary">تفاصيل</a>
-          <p  class="btn btn-primary">الهاتف</p>
+          <a href="{{route('detail_product',$product->id)}}" class="btn btn-primary">تفاصيل</a>
+          <p onclick="location.href='tel:+967772003973'" class="btn btn-primary">الهاتف</p>
         </div>
       </div>
    
@@ -49,8 +82,6 @@
        @endisset
       
     </div>
-
-
      
     </div>
   </div>
@@ -66,7 +97,7 @@
      <div class="row">
         <div class="col-md-12">
            <div class="titlepage">
-              <h2>Letest News</h2>
+              <h2>اخر المقالات</h2>
            </div>
         </div>
      </div>

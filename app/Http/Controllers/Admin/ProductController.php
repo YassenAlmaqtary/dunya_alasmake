@@ -142,7 +142,7 @@ class ProductController extends Controller
             }
             $product_name_exsite = Product::select('id', 'name')->where('name', $request->name)->first();
         
-            if ($product_name_exsite->id!=$id) {
+            if ($product_name_exsite!=null and $product_name_exsite->id!=$id) {
                 return  redirect()->route('admin.product')->with(['error' => 'الاسم موجود من قبل']);
             }    
 

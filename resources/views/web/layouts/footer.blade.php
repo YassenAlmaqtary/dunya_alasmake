@@ -45,11 +45,11 @@
         </div>
      </div>
      
-     <div class="copyright">
+     <div class="copyright project">
         <div class="container">
            <div class="row">
               <div class="col-md-12">
-                 <p> &copy; <?php echo date("Y"); ?> : حقوق الطبع محفوظة لدى<a href="{{route('product')}}">دنيا الاسماك</a></p>
+                 <p> &copy; <?php echo date("Y"); ?> : حقوق الطبع محفوظة لدى<a href="{{route('home')}}">دنيا الاسماك</a></p>
               </div>
            </div>
         </div>

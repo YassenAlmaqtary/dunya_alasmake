@@ -40,6 +40,7 @@
 
    body{
      font-family: Cairo !important;
+     background-image: url(../images/banner.jpg);;
 
    }
 
@@ -60,8 +61,9 @@ body {
      line-height: 1.80857;
      font-weight: normal;
 }
+
 .carousel img{
-     height:450px;
+     height:300px;
      width: 400px;
      
 }
@@ -264,7 +266,7 @@ button {
      width: 280px;
 }
 
-d
+
 /*-- header area --*/
 header{
      position: sticky;
@@ -275,6 +277,17 @@ header{
      z-index: 111;
  
 }
+.logfont{
+position: relative;
+font-size:x-large;
+}
+.logfont span{
+position: absolute;
+bottom: 8px;;
+left:60px;
+ /* transform: translateX(-3%);  */
+}
+
 .square{
      background-color: white;
      width: 80%;
@@ -284,7 +297,7 @@ header{
 }
 .square h2{
      color:black;
-     font-size: small;
+     font-size: large;
      width:50%;
      height:50% ;
      margin:auto;
@@ -676,7 +689,8 @@ position: absolute;
 /** project section **/
 
 .project {
- background: url(../images/banner.jpg);
+background: url(../images/banner.jpg);   
+/*background:rgb(255, 255, 255);*/
  background-size: cover;
  background-repeat: no-repeat;
 padding-top: 20px;
@@ -1171,7 +1185,12 @@ margin: 0 15px 20px 15px;
      }
       
    
-    
+     .logfont span{
+          position: absolute;
+          bottom: 8px;;
+          left:30px;
+           /* transform: translateX(-3%);  */
+          }
 }
 
 

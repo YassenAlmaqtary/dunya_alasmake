@@ -31,17 +31,9 @@
       <!-- end banner --> 
 
       
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-         <div class="carousel-inner">
-           <div class="carousel-item active">
-            <img  src="{{asset('web/asset/images/fashion.jpg')}}" class="d-block w-100" alt="...">
-           </div>
-           <div class="carousel-item">
-             <img src="{{asset('web/asset/images/logo.jpg')}}" class="d-block w-100" alt="...">
-           </div>
-          
-         </div>
-       </div>
+     @yield('slider')
+
+
 
       
       {{-- <!-- six_box section -->

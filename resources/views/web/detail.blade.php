@@ -10,12 +10,12 @@
 
 @section('content')
 
-<div class="blue_bg">
+<div class="blue_bg ">
     <div class="container">
        <div class="row">
           <div class="col-md-12">
              <div class="titlepage">
-                <h2>تفاصيل المنتج</h2>
+                <h2>تفاصيل </h2>
              </div>
           </div>
        </div>
@@ -27,15 +27,15 @@
        <div class="row">
           <div class="col-md-5">
              <div class="about_text">
-                <h3>{{$product->name}}</h3>
-                <p>{{$product->details!=null?$product->details:'لايوجد حاليا تفاصيل لهذا المنتج'}} </p>
+                <h3>{{$detail->name}}</h3>
+                <p>{{$detail->details!=null?$detail->details:'لايوجد حاليا تفاصيل لهذا المنتج'}} </p>
                 {{-- <a class="read_more" href="#">Read More</a> --}}
              </div>
           </div>
           <div class="col-md-7">
              <div class="about_img">
                 <figure >
-                  <img style="width:90%" src="{{$product->image_path}}" alt="#"/>
+                  <img style="width:90%" src="{{$detail->image_path}}" alt="#"/>
                 </figure>
              </div>
           </div>

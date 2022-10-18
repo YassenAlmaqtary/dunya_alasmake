@@ -47,6 +47,26 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware' => 'auth:ad
         });    
         //##################### end product ######################
 
+
+    //##################### bagin cooks ######################
+    Route::group(['prefix' => 'cooks'], function () {
+      Route::resource('cook', 'CookController', [
+       'names' => [
+           'create' => 'admin.cook.create',
+           'index' => 'admin.cook',
+           'store' => 'admin.cook.store',
+          'edit' => 'admin.cook.edit',
+          'update' => 'admin.cook.update',
+          'show'=>'admin.cook.show'
+         // 'destroy' => 'admin.product.delete',       
+          ] 
+        ]);
+        Route::post('cook/destroy','CookController@destroy')->name('admin.cook.delete');
+        Route::post('cook/changeStatusProduct','CookController@changeStause')->name('cookStatus');
+       });    
+       //##################### end cooks ######################
+
+
         //##################### bagin customer ######################
 
         Route::group(['prefix' => 'customers'], function () {

@@ -35,13 +35,13 @@ $catgorys=Category::aLL();
              </div>
           </div>
        </div>
-       <div class="header_midil ">
+       <div class="header_midil">
           <div class="container">
              <div class="row d_flex">
                 <div class="col-md-4">
                    <ul class="conta_icon d_none1">
                       {{-- <li><a href="#"><img src="{{asset('web/asset/images/email.png')}}" alt="#"/> demo@gmail.com</a> </li> --}}
-                      <li><a href="#"><img src="{{asset('web/asset/images/call.png')}}" alt="#"/>Call us:+967772003973</a> </li>
+                      <li><a href="tel:+967772003973"><img src="{{asset('web/asset/images/call.png')}}" alt="#"/><span>:Call us:+967772003973</span></a> </li>
                    </ul>
                 </div>
                 <div class="col-md-4">
@@ -49,9 +49,9 @@ $catgorys=Category::aLL();
                   </div>
                   
                </div>
-                <div class="col-md-4">
-                   <a class="logo" href="#"><img src="{{asset('web/asset/images/logo.jpg')}}" alt="#"/></a>
-                   <h3>دنيــــــا الاســــــماك  .  Dunya alasmak</h3>
+                <div class="col-md-4 logfont">
+                   <a class="logo" href="#"><img src="{{asset('web/asset/images/logo1.png')}}" alt="#"/> دنيــا الاســــــماك
+                    <span> Dunya alasmak</span></a>
                 </div>
                 <div class="col-md-4">
                    {{-- <ul class="right_icon d_none1">
@@ -73,27 +73,25 @@ $catgorys=Category::aLL();
                       </button>
                       <div class="collapse navbar-collapse" id="navbarsExample04">
                          <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                               <a class="nav-link" href="{{route('product')}}">الرئيسية</a>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{route('all')}}">الكــل</a>
                             </li>
-                            <div class="btn-group" style="direction:ltr;">
-                              <button type="button" class="btn btn_catgory dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                الاقسام
-                              </button>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{route('product')}}">الكل</a>
-                                @isset($catgorys)
-                                @foreach ($catgorys as $category )
-                                <a class="dropdown-item" href="{{route('product',$category->id)}}">{{$category->name}}</a>
-                                @endforeach
-                                @endisset
-                              </div>
-                            </div>
+                            @isset($catgorys)
+                            @foreach ($catgorys as $category )
+                            <li class="nav-item">
+                            <a class="nav-link" href="{{route('product',$category->id)}}">{{$category->name}}</a>
+                            </li>
+                            @endforeach
+                            @endisset
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{route('cooks')}}">الطبخات</a>
+                           </li>
                             <li class="nav-item">
                                <a class="nav-link" href="{{route('article')}}">المقالات</a>
                             </li>
+                           
                             <li class="nav-item">
-                              <a class="nav-link" href="{{route('contact-us.create')}}">تواصل معنا</a>
+                              <a class="nav-link" href="{{route('contact-us.create')}}"><span>تواصل معنا</span></a>
                            </li>
                             {{-- <li class="nav-item">
                                <a class="nav-link" href="#">Fashion</a>

@@ -10,6 +10,8 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel = "icon" href ="{{asset('web/asset/images/logo1.png')}}" type = "image/x-icon">
+
     <!-- bootstrap css -->
     <link rel="stylesheet" href="{{asset('web/asset/css/bootstrap.min.css')}}">
     <!-- style css -->

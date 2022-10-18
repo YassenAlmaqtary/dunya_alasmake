@@ -10,7 +10,14 @@ use Illuminate\Http\Request;
 
 class ProductWebController extends Controller
 {
+
+       public function index(){
+        return view('web.home');
+       }
+
+
         public function getProduct($catgory_id=null){  
+            
         $category_name="الكل";       
         $articles=Article::limit(3)->where('status','1')->orderBy('updated_at', 'desc')->get();
         if($catgory_id!=null){
@@ -26,14 +33,8 @@ class ProductWebController extends Controller
     } 
 
     public function show($id){
-        $product=Product::where('id',$id)->select('id','name','image','details')->first(); 
-       return  view('web.detail',compact('product'));
-    }
-
-
-    public  function article(){
-        $articles=Article::where('status','1')->get();
-        return view('web.article',compact('articles'));
+        $detail=Product::where('id',$id)->select('id','name','image','details')->first(); 
+       return  view('web.detail',compact('detail'));
     }
 
 

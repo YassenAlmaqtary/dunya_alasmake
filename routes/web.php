@@ -12,14 +12,30 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['namespace'=>'App\Http\Controllers\Web'],function() {
 
-Route::group(['prefix'=>'products','namespace'=>'App\Http\Controllers\Web'],function() {
-    
-    Route::get('product/{category_id?}','ProductWebController@getProduct')->name('product')->middleware('traffic');
-    Route::get('detail-product/{id}','ProductWebController@show')->name('detail');
-    Route::get('article','ProductWebController@article')->name('article');
-    Route::get('contact-us','ProductWebController@getContact')->name('contact');
-    Route::resource('contact-us','ContactController', [
+
+Route::get('/{category_id?}','ProductWebController@getProduct')->name('all')->middleware('traffic');
+
+//////////////////////////////////////////////////////////////////////////////////
+Route::group(['prefix'=>'product'],function() {
+    Route::get('home/','ProductWebController@index')->name('home');
+    Route::get('/{category_id?}','ProductWebController@getProduct')->name('product');
+    Route::get('detail-product/{id}','ProductWebController@show')->name('detail_product');
+});
+
+//////////////////////////////////////////////////////////////////////////////
+
+Route::group(['prefix'=>'cook'],function() {
+
+    Route::get('cooks','CookWebController@getallcooks')->name('cooks');
+    Route::get('detail-cook/{id}','CookWebController@show')->name('detail_cook');
+});
+
+//////////////////////////////////////////////////////////////////////////////
+Route::group(['prefix'=>'contact-us'],function() {
+    //Route::get('contact-us','ProductWebController@getContact')->name('contact');
+    Route::resource('contact-us','ContactWebController', [
         'names' => [
             'index' => 'contact-us',
             'create' => 'contact-us.create',
@@ -27,12 +43,22 @@ Route::group(['prefix'=>'products','namespace'=>'App\Http\Controllers\Web'],func
             'edit' => 'contact-us.edit',
             'update' => 'contact-us.update',
             //'destroy' => 'contact-us.delete',
-            
-            ]      
-      ]);
+            ]  
+          ]);
+      });
+      
+  ////////////////////////////////////////////////////////////////////////////////    
+  Route::group(['prefix'=>'article'],function() {
+    Route::get('articles/','ArticalWebController@getArticle')->name('article');
+    });
 
 
-});
+
+
+
+});  
+
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

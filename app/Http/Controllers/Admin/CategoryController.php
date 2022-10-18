@@ -123,15 +123,15 @@ class CategoryController extends Controller
        try{
         
           $category=Category::find($id);
+        
           if(!$category){
            return redirect()->route('admin.categorys')->with(['error' => ' هذا القسم غير موجود اوتم حذفة من قبل']);
           }
          $Category_name_exsite=Category::select('id','name')->where(['name'=>$request->name])->first();
-    
-          if($Category_name_exsite->id!=$id){
+         
+          if($Category_name_exsite!=null and $Category_name_exsite->id!=$id ){
               return  redirect()->route('admin.categorys')->with(['error' => 'الاسم موجود من قبل']);
           }
-          
            $filePath = $category->icon;
             
            if($request->has('icon')){
@@ -142,12 +142,13 @@ class CategoryController extends Controller
             else{
               $filePath = uploadImage('categorys', $request->icon);
             }
-            
            } 
+           
+
            DB::beginTransaction();
            Category::where('id',$id)->update( [
             'name' => $request->name,
-            'icon' => $filePath,
+            //'icon' => $filePath,
             'updated_at' => Carbon::now(),
             ]
            );
@@ -156,6 +157,7 @@ class CategoryController extends Controller
 
        }
        catch(Exception $exp){
+         return $exp;
          DB::rollBack();
             removeImage('/dashboard/uploads/categorys/'.$filePath);
         

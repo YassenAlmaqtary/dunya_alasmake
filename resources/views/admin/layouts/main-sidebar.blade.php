@@ -99,6 +99,33 @@
                 </li>
               </ul>
             </li>
+
+            <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                الطبخات
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">{{App\Models\Cook::count()}}</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('admin.cook.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>اضافة طبخة</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.cook')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>عرض الطبخة</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
