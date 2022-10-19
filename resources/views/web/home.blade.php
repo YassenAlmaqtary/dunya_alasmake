@@ -3,7 +3,7 @@
 دنيا الاسماك
 @endsection
 @section('css')
-  <link rel="stylesheet" href="{{asset('web/asset/product.css')}}">
+  <link rel="stylesheet" href="{{asset('asset/web/asset/product.css')}}">
  
 @endsection
 
@@ -27,16 +27,16 @@
       </div>
    <div class="carousel-inner">
      <div class="carousel-item active">
-      <img  src="{{asset('web/asset/images/logo.jpg')}}" class="d-block w-100" alt="...">
+      <img  src="{{asset('asset/web/asset/images/logo.jpg')}}" class="d-block w-100" alt="...">
      </div>
      <div class="carousel-item">
-       <img src="{{asset('web/asset/images/fashion.jpg')}}" class="d-block w-100" alt="...">
+       <img src="{{asset('asset/web/asset/images/fashion.jpg')}}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="{{asset('web/asset/images/fashion2.jpg')}}" class="d-block w-100" alt="...">
+        <img src="{{asset('asset/web/asset/images/fashion2.jpg')}}" class="d-block w-100" alt="...">
       </div>  
        <div class="carousel-item">
-        <img src="{{asset('web/asset/images/fashion3.jpg')}}" class="d-block w-100" alt="...">
+        <img src="{{asset('asset/web/asset/images/fashion3.jpg')}}" class="d-block w-100" alt="...">
        </div>        
    </div>
  </div>

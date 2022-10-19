@@ -30,7 +30,7 @@
 @section('scripts')
 
 <!-- bs-custom-file-input -->
-<script src="{{asset('dashboard/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+<script src="{{asset('asset/dashboard/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 
 <!-- Page specific script -->
 <script>

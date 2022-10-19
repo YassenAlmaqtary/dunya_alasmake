@@ -60,7 +60,7 @@
             @foreach ($subcripts as $subscript)
             
          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item" id="dropdown_item">
+          <a href="{{route('admin.subscript.show',$subscript->id)}}" class="dropdown-item" id="dropdown_item">
             <!-- Message Start -->
             <div class="media">
               <div class="media-body">

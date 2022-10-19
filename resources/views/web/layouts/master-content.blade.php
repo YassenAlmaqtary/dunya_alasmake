@@ -5,7 +5,7 @@
    <body class="main-layout">
       <!-- loader  -->
       <div class="loader_bg">
-         <div class="loader"><img src="{{asset('web/asset/images/loading.gif')}}" alt="#" /></div>
+         <div class="loader"><img src="{{asset('asset/web/asset/images/loading.gif')}}" alt="#" /></div>
       </div>
       <!-- end loader -->
        @include('web.layouts.header')    

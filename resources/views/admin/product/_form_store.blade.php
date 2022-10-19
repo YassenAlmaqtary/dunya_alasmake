@@ -1,6 +1,6 @@
 @php
   $name=@isset($product)?$product->name:old('name');
-  $imag=@isset($product)?$product->image_path:asset('dashboard/uploads/placeholder1.png');
+  $imag=@isset($product)?$product->image_path:asset('asset/dashboard/uploads/placeholder1.png');
   $price=@isset($product)?$product->price:old('price');  
   $details=@isset($product)?$product->details:old('details');
   $main_catgory_id=@isset($product)?$product->category_id:old('categry_id');

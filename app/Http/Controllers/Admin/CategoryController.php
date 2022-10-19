@@ -55,6 +55,7 @@ class CategoryController extends Controller
             $filePath =null;
             if ($request->has('icon')) {
                 $filePath = uploadImage('categorys', $request->icon);
+                
             }
            
             DB::beginTransaction();
@@ -135,11 +136,13 @@ class CategoryController extends Controller
            $filePath = $category->icon;
             
            if($request->has('icon')){
+              
             if( $filePath!=null){
              removeImage('/dashboard/uploads/categorys/'.$filePath);
              $filePath = uploadImage('categorys', $request->icon);
             }
             else{
+        
               $filePath = uploadImage('categorys', $request->icon);
             }
            } 
@@ -148,7 +151,7 @@ class CategoryController extends Controller
            DB::beginTransaction();
            Category::where('id',$id)->update( [
             'name' => $request->name,
-            //'icon' => $filePath,
+            'icon' => $filePath,
             'updated_at' => Carbon::now(),
             ]
            );

@@ -1,7 +1,7 @@
 @php
 
   $title=@isset($article)?$article->title:old('title');
-  $imag=@isset($article)?$article->image_path:asset('dashboard/uploads/placeholder1.png');
+  $imag=@isset($article)?$article->image_path:asset('asset/dashboard/uploads/placeholder1.png');
   $article_details=@isset($article)?$article->article_details:old('article_details');  
   @endisset  
 @endphp

@@ -3,7 +3,7 @@
   $email=@isset($customer)?$customer->email:old('email');
   $address=@isset($customer)?$customer->address:old('address');
   $phone=@isset($customer)?$customer->phone:old('phone');
-  $imag=@isset($customer)?$customer->image_path:asset('dashboard/uploads/placeholder1.png');
+  $imag=@isset($customer)?$customer->image_path:asset('asset/dashboard/uploads/placeholder1.png');
   $gender=@isset($customer)?$customer->gender:old('gender');
   @endisset  
 @endphp

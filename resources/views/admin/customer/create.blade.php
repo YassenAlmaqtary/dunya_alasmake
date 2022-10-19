@@ -12,9 +12,9 @@
  <!-- Google Font: Source Sans Pro -->
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
  <!-- Font Awesome -->
- <link rel="stylesheet" href="{{asset('dashboard/assets/plugins/fontawesome-free/css/all.min.css')}}">
+ <link rel="stylesheet" href="{{asset('asset/dashboard/assets/plugins/fontawesome-free/css/all.min.css')}}">
  <!-- Theme style -->
- <link rel="stylesheet" href="{{asset('dashboard/dist/css/adminlte.min.css')}}">
+ <link rel="stylesheet" href="{{asset('asset/dashboard/dist/css/adminlte.min.css')}}">
 @endsection
 @section('page_title1')
 @if ($flags==true)
@@ -35,7 +35,7 @@
 
 @section('scripts')
 <!-- bs-custom-file-input -->
-<script src="{{asset('dashboard/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+<script src="{{asset('asset/dashboard/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 <script>
 $(function () {
     bsCustomFileInput.init();

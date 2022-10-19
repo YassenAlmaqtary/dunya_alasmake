@@ -28,11 +28,11 @@ class Category extends Model
 public function getIconPathAttribute(){
     if($this->icon){
     
-       return asset('dashboard/uploads/categorys/'.$this->icon);
+       return asset('asset/dashboard/uploads/categorys/'.$this->icon);
     } 
 
     else
-        return asset('dashboard/uploads/placeholder1.png');
+        return asset('asset/dashboard/uploads/placeholder1.png');
 }
 public function scopeSelection($qury){
         return $qury->select('id','name');

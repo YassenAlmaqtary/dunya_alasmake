@@ -39,11 +39,11 @@ public function getUpdatedAtAttribute($date)
     public function getimagePathAttribute(){
         if($this->image){
         
-           return asset('dashboard/uploads/articles/'.$this->image);
+           return asset('asset/dashboard/uploads/articles/'.$this->image);
         } 
     
         else
-            return asset('dashboard/uploads/placeholder1.png');
+            return asset('asset/dashboard/uploads/placeholder1.png');
     } 
     
     public function getActive()

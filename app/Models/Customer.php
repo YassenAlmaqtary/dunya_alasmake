@@ -37,9 +37,9 @@ class Customer extends Model
   
     public function getImagePathAttribute(){
         if($this->image!=null)
-            return asset('dashboard/uploads/customers/'.$this->image);
+            return asset('asset/dashboard/uploads/customers/'.$this->image);
         else
-            return asset('dashboard/uploads/placeholder1.png');
+            return asset('asset/dashboard/uploads/placeholder1.png');
     }
     public function getGender()
     {

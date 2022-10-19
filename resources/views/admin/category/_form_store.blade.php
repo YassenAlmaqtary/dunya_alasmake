@@ -1,6 +1,6 @@
 @php
   $name=@isset($category)?$category->name:old('name');
-  $imag=@isset($category)?$category->icon_path:asset('dashboard/uploads/placeholder1.png');
+  $imag=@isset($category)?$category->icon_path:asset('asset/dashboard/uploads/placeholder1.png');
     
   @endisset  
 @endphp

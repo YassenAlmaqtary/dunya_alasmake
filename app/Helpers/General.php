@@ -23,10 +23,11 @@ function get_defoult_langug(){
 
 function uploadImage($folder, $image)
 {  
-    $image->store('/', $folder);
-
+    $image->store('/', $folder);   
     $filename = $image->hashName();
-    $path ='/dashboard/uploads/'. $folder . '/' . $filename;
+    
+    $path ='asset/dashboard/uploads/'. $folder . '/' . $filename;
+   
    //$image->move(public_path('/dashboard/uploads/'. $folder . '/'),$filename);
     return $filename;
 }
@@ -51,11 +52,11 @@ function uploadMultiImage($folder,$images)
 }
 
 function removeImage($path){
-    
-  //if(file_exists(base_path().$path))
-  if(file_exists(public_path().$path)){
-  //unlink(base_path().$path);
-    unlink(public_path().$path);
+   $path='/asset'.$path;
+  if(file_exists(base_path().$path)){
+  //if(file_exists(public_path().$path)){
+   unlink(base_path().$path);
+    //unlink(public_path().$path);
    
   }
  

@@ -3,7 +3,7 @@
 دنيا الاسماك
 @endsection
 @section('css')
-  <link rel="stylesheet" href="{{asset('web/asset/product.css')}}">
+  <link rel="stylesheet" href="{{asset('asset/web/asset/product.css')}}">
  
 @endsection
 
@@ -89,7 +89,16 @@
 
   </div>
 
-   @endsection
+  <div class="float" id="scroller">
+   <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-arrow-up my-float" viewBox="0 0 16 16">
+     <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+   </svg>
+ </div>
+
+</div>
+</div>
+
+@endsection
 
 @section('script')
 <script>

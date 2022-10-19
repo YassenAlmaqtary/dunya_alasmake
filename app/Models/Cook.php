@@ -28,10 +28,10 @@ class Cook extends Model
         public function getimagePathAttribute(){
             if($this->image){
             
-               return asset('dashboard/uploads/cooks/'.$this->image);
+               return asset('asset/dashboard/uploads/cooks/'.$this->image);
             } 
         
             else
-                return asset('dashboard/uploads/placeholder1.png');
+                return asset('asset/dashboard/uploads/placeholder1.png');
         } 
 }

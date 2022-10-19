@@ -3,7 +3,7 @@
 دنيا الاسماك
 @endsection
 @section('css')
-  <link rel="stylesheet" href="{{asset('web/asset/product.css')}}">
+  <link rel="stylesheet" href="{{asset('asset/web/asset/product.css')}}">
 @endsection
 
 

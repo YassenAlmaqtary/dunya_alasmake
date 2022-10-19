@@ -41,7 +41,7 @@ $catgorys=Category::aLL();
                 <div class="col-md-4">
                    <ul class="conta_icon d_none1">
                       {{-- <li><a href="#"><img src="{{asset('web/asset/images/email.png')}}" alt="#"/> demo@gmail.com</a> </li> --}}
-                      <li><a href="tel:+967772003973"><img src="{{asset('web/asset/images/call.png')}}" alt="#"/><span>:Call us:+967772003973</span></a> </li>
+                      <li><a href="tel:+967772003973"><img src="{{asset('asset/web/asset/images/call.png')}}" alt="#"/><span>:Call us:+967772003973</span></a> </li>
                    </ul>
                 </div>
                 <div class="col-md-4">
@@ -50,7 +50,7 @@ $catgorys=Category::aLL();
                   
                </div>
                 <div class="col-md-4 logfont">
-                   <a class="logo" href="#"><img src="{{asset('web/asset/images/logo1.png')}}" alt="#"/> دنيــا الاســــــماك
+                   <a class="logo" href="#"><img src="{{asset('asset/web/asset/images/logo1.png')}}" alt="#"/> دنيــا الاســــــماك
                     <span> Dunya alasmak</span></a>
                 </div>
                 <div class="col-md-4">

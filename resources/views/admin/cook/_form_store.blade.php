@@ -1,6 +1,6 @@
 @php
   $name=@isset($cook)?$cook->name:old('name');
-  $imag=@isset($cook)?$cook->image_path:asset('dashboard/uploads/placeholder1.png');
+  $imag=@isset($cook)?$cook->image_path:asset('asset/dashboard/uploads/placeholder1.png');
   $price=@isset($cook)?$cook->price:old('price');  
   $details=@isset($cook)?$cook->details:old('details');
   @endisset  

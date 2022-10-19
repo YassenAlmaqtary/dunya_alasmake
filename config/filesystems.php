@@ -43,23 +43,23 @@ return [
         ],
         'categorys' => [
             'driver' => 'local',
-            'root' => public_path().'/dashboard/uploads/categorys',
+            'root' => base_path().'/asset/dashboard/uploads/categorys',
         ],
         'products' => [
             'driver' => 'local',
-            'root' => public_path().'/dashboard/uploads/products',
+            'root' => base_path().'/asset/dashboard/uploads/products',
         ],
         'customers'=>[
             'driver' => 'local',
-            'root' => public_path().'/dashboard/uploads/customers',
+            'root' => base_path().'/asset/dashboard/uploads/customers',
         ],
         'articles'=>[
             'driver' => 'local',
-            'root' => public_path().'/dashboard/uploads/articles',
+            'root' => base_path().'/asset/dashboard/uploads/articles',
         ],
         'cooks'=>[
             'driver' => 'local',
-            'root' => public_path().'/dashboard/uploads/cooks',
+            'root' => base_path().'/asset/dashboard/uploads/cooks',
         ],
 
         's3' => [

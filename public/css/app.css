@@ -710,6 +710,17 @@ select {
     max-width: 1536px;
   }
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 .fixed {
   position: fixed;
 }
@@ -792,9 +803,6 @@ select {
 .ml-auto {
   margin-left: auto;
 }
-.mr-3 {
-  margin-right: 0.75rem;
-}
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -818,6 +826,9 @@ select {
 }
 .mb-0 {
   margin-bottom: 0px;
+}
+.mr-3 {
+  margin-right: 0.75rem;
 }
 .block {
   display: block;

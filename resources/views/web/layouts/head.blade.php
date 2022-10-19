@@ -10,18 +10,17 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel = "icon" href ="{{asset('web/asset/images/logo1.png')}}" type = "image/x-icon">
-
+    <link rel = "icon" href ="{{asset('asset/web/asset/images/logo1.png')}}" type = "image/x-icon">
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="{{asset('web/asset/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/web/asset/css/bootstrap.min.css')}}">
     <!-- style css -->
-    <link rel="stylesheet" href="{{asset('web/asset/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/web/asset/css/style.css')}}">
     <!-- Responsive-->
-    <link rel="stylesheet" href="{{asset('web/asset/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/web/asset/css/responsive.css')}}">
     <!-- fevicon -->
-    <link rel="icon" href="{{asset('web/asset/images/fevicon.png')}}" type="image/gif" />
+    <link rel="icon" href="{{asset('asset/web/asset/images/fevicon.png')}}" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="{{asset('web/asset/css/jquery.mCustomScrollbar.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/web/asset/css/jquery.mCustomScrollbar.min.css')}}">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
