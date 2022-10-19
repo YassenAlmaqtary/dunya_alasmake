@@ -1,3 +1,4 @@
+
 <!-- jQuery -->
 <script src="{{asset('asset/dashboard/assets/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -35,7 +36,7 @@
 
 <!--laravel echo and  socketio-->
 <script>window.laravel_echo_port='{{env("LARAVEL_ECHO_PORT")}}';</script>
-<script src="//{{ Request::getHost()}}:{{env('LARAVEL_ECHO_PORT')}}/socket.io/socket.io.js"></script>
+<script src="http://{{ Request::getHost()}}:{{env('LARAVEL_ECHO_PORT')}}/socket.io/socket.io.js"></script>
 <script src="{{ url('js/app.js') }}" type="text/javascript"></script>
 <script src="{{asset('asset/dashboard/assets/js/subscript-message.js')}}"></script>
 @yield('scripts')

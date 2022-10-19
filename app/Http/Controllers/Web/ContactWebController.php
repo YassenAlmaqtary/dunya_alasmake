@@ -57,7 +57,7 @@ class ContactWebController extends Controller
             'created_at'=>$data->created_at,
             'updated_at'=>$data->updated_at,
             'count'=>Subscript::count(),
-            'icon'=>asset('dashboard/assets/img/messages-icon.png'),
+            'icon'=>asset('asset/dashboard/assets/img/messages-icon.png'),
             'route'=>route('admin.subscript.show',$data->id),
         ];
         // Convert array into an object
