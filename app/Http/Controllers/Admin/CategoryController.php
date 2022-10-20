@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use App\Traits\GeneralTrait;
+use App\Traits\HelperTrait;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 class CategoryController extends Controller
 {
     use GeneralTrait;
+    use HelperTrait;
     /**
      * Display a listing of the resource.
      *
@@ -54,7 +56,7 @@ class CategoryController extends Controller
             
             $filePath =null;
             if ($request->has('icon')) {
-                $filePath = uploadImage('categorys', $request->icon);
+                $filePath =  $this->uploadImage('categorys', $request->icon);
                 
             }
            
@@ -72,7 +74,7 @@ class CategoryController extends Controller
             return  redirect()->route('admin.categorys')->with(['success' => 'تم الحفظ بنجاح']);
         } catch (Exception $exp) {
             DB::rollBack();
-            removeImage('/dashboard/uploads/categorys/'.$filePath);
+            $this->removeImage('/dashboard/uploads/categorys/'.$filePath);
             return  redirect()->route('admin.categorys')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
         
@@ -138,12 +140,12 @@ class CategoryController extends Controller
            if($request->has('icon')){
               
             if( $filePath!=null){
-             removeImage('/dashboard/uploads/categorys/'.$filePath);
-             $filePath = uploadImage('categorys', $request->icon);
+                $this-> removeImage('/dashboard/uploads/categorys/'.$filePath);
+             $filePath =  $this->uploadImage('categorys', $request->icon);
             }
             else{
         
-              $filePath = uploadImage('categorys', $request->icon);
+              $filePath =  $this->uploadImage('categorys', $request->icon);
             }
            } 
            
@@ -162,7 +164,7 @@ class CategoryController extends Controller
        catch(Exception $exp){
          return $exp;
          DB::rollBack();
-            removeImage('/dashboard/uploads/categorys/'.$filePath);
+            $this->removeImage('/dashboard/uploads/categorys/'.$filePath);
         
         return  redirect()->route('admin.categorys')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
        }
@@ -185,14 +187,14 @@ class CategoryController extends Controller
             
             if($products){
                 foreach($products as $product){
-                    removeImage('/dashboard/uploads/products/'.$product->image);
+                    $this-> removeImage('/dashboard/uploads/products/'.$product->image);
                     $product->delete();
                 }
             }
 
             $filePath = $category->icon;
             if($filePath!=null){
-            removeImage('/dashboard/uploads/categorys/'.$filePath);
+                $this-> removeImage('/dashboard/uploads/categorys/'.$filePath);
             }
             
             $category->delete();

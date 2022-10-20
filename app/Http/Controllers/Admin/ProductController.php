@@ -7,6 +7,7 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Traits\GeneralTrait;
+use App\Traits\HelperTrait;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Contracts\Validation\Rule;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     use GeneralTrait;
+    use HelperTrait;
     /**
      * Display a listing of the resource.
      *
@@ -59,7 +61,7 @@ class ProductController extends Controller
             }
             $filePath = null;
             if ($request->has('image')) {
-                $filePath = uploadImage('products', $request->image);
+                $filePath = $this->uploadImage('products', $request->image);
             }
             $details = null;
             if ($request->has('details')) {
@@ -89,7 +91,7 @@ class ProductController extends Controller
             return  redirect()->route('admin.product')->with(['success' => 'تم الحفظ بنجاح']);
         } catch (Exception $exp) {
             DB::rollBack();
-            removeImage('/dashboard/uploads/products/' . $filePath);
+            $this->removeImage('/dashboard/uploads/products/' . $filePath);
             return  redirect()->route('admin.product')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
     }
@@ -150,8 +152,8 @@ class ProductController extends Controller
             $details = $product->details;
             $discount_price = $product->discount_price;
             if ($request->has('image')) {
-                removeImage('/dashboard/uploads/products/' . $filePath);
-                $filePath = uploadImage('products', $request->image);
+                $this-> removeImage('/dashboard/uploads/products/' . $filePath);
+                $filePath = $this->uploadImage('products', $request->image);
             }
 
             if ($request->has('details')) {
@@ -177,7 +179,7 @@ class ProductController extends Controller
             return  redirect()->route('admin.product')->with(['success' => 'تم التحديث بنجاح']);
         } catch (Exception $exp) {
             DB::rollBack();
-            removeImage('/dashboard/uploads/products/' . $filePath);
+            $this-> removeImage('/dashboard/uploads/products/' . $filePath);
             return  redirect()->route('admin.product')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
     }
@@ -197,7 +199,7 @@ class ProductController extends Controller
                $this->returnError(404,' هذا المنتج غير موجود اوتم حذفة من قبل');
             $filePath = $product->image;
             if ($filePath != null) {
-                removeImage('/dashboard/uploads/products/' . $filePath);
+                $this-> removeImage('/dashboard/uploads/products/' . $filePath);
             }
             $product->delete();
             return $this->returnData ('success','200','تم الحذف بنجاح');

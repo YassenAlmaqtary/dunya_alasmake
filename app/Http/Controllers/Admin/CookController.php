@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CookRequest;
 use App\Models\Cook;
 use App\Traits\GeneralTrait;
+use App\Traits\HelperTrait;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 class CookController extends Controller
 {
     use GeneralTrait;
+    use HelperTrait;
     /**
      * Display a listing of the resource.
      *
@@ -51,7 +53,7 @@ class CookController extends Controller
             if ($cook_name_exsite > 0) {
                 return  redirect()->route('admin.cook')->with(['error' => 'الاسم موجود من قبل']);
             }
-           $filePath=uploadImage('cooks', $request->image);
+           $filePath= $this->uploadImage('cooks', $request->image);
            $details = null;
            if ($request->has('details')) {
                $details = $request->details;
@@ -67,7 +69,7 @@ class CookController extends Controller
             return  redirect()->route('admin.cook')->with(['success' => 'تم الحفظ بنجاح']);
       }
       catch(Exception $exp){
-         removeImage('/dashboard/uploads/cooks/'. $filePath);
+        $this-> removeImage('/dashboard/uploads/cooks/'. $filePath);
          return  redirect()->route('admin.product')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
       }
 
@@ -128,8 +130,8 @@ class CookController extends Controller
             $filePath = $cook->image;
             $details = $cook->details;
             if ($request->has('image')) {
-                removeImage('/dashboard/uploads/cooks/'. $filePath);
-                $filePath = uploadImage('cooks', $request->image);
+                $this->removeImage('/dashboard/uploads/cooks/'. $filePath);
+                $filePath =  $this->uploadImage('cooks', $request->image);
             }
 
             if ($request->has('details')) {
@@ -150,7 +152,7 @@ class CookController extends Controller
             return  redirect()->route('admin.cook')->with(['success' => 'تم التحديث بنجاح']);
         } catch (Exception $exp) {
             DB::rollBack();
-            removeImage('/dashboard/uploads/cooks/'. $filePath);
+            $this-> removeImage('/dashboard/uploads/cooks/'. $filePath);
             return  redirect()->route('admin.cook')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
 
@@ -173,7 +175,7 @@ class CookController extends Controller
                $this->returnError(404,' هذا المنتج غير موجود اوتم حذفة من قبل');
             $filePath = $cook->image;
             if ($filePath != null) {
-                removeImage('/dashboard/uploads/cooks/'. $filePath);
+                $this-> removeImage('/dashboard/uploads/cooks/'. $filePath);
             }
             $cook->delete();
             return $this->returnData ('success','200','تم الحذف بنجاح');

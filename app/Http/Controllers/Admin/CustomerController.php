@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerRequest;
 use App\Models\Customer;
 use App\Traits\GeneralTrait;
+use App\Traits\HelperTrait;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 class CustomerController extends Controller
 {
     use GeneralTrait;
+    use HelperTrait;
     /**
      * Display a listing of the resource.
      *
@@ -58,7 +60,7 @@ class CustomerController extends Controller
         
             $filePath = null;
             if ($request->has('image')) {
-                $filePath = uploadImage('customers', $request->image);
+                $filePath = $this->uploadImage('customers', $request->image);
             }
             DB::beginTransaction();
             Customer::insert(
@@ -78,7 +80,7 @@ class CustomerController extends Controller
             return  redirect()->route('admin.customer')->with(['success' => 'تم الحفظ بنجاح']);
         } catch (Exception $exp) {
             DB::rollBack();
-            removeImage('/dashboard/uploads/customers/'.$filePath);
+            $this->removeImage('/dashboard/uploads/customers/'.$filePath);
             return  redirect()->route('admin.customer')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
         
@@ -146,11 +148,11 @@ class CustomerController extends Controller
               
              if($request->has('image')){
               if( $filePath!=null){
-               removeImage('/dashboard/uploads/customers/'.$filePath);
-               $filePath = uploadImage('customers', $request->image);
+                $this->removeImage('/dashboard/uploads/customers/'.$filePath);
+               $filePath = $this->uploadImage('customers', $request->image);
               }
               else{
-                $filePath = uploadImage('customers', $request->image);
+                $filePath = $this->uploadImage('customers', $request->image);
               }
               
              }
@@ -171,7 +173,7 @@ class CustomerController extends Controller
          }
          catch(Exception $exp){
             DB::rollBack();
-            removeImage('/dashboard/uploads/customers/'.$filePath);
+            $this-> removeImage('/dashboard/uploads/customers/'.$filePath);
             
           return  redirect()->route('admin.customer')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
          }
@@ -197,7 +199,7 @@ class CustomerController extends Controller
 
             $filePath = $customer->image_path;
             if($filePath!=null){
-                removeImage('/dashboard/uploads/customers/'.$filePath);
+                $this->removeImage('/dashboard/uploads/customers/'.$filePath);
             }
             
             $customer->delete();

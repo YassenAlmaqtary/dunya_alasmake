@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticeRequset;
 use App\Models\Article;
 use App\Traits\GeneralTrait;
+use App\Traits\HelperTrait;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 class ArticleController extends Controller
 {
     use GeneralTrait;
+    use HelperTrait;
     /**
      * Display a listing of the resource.
      *
@@ -48,7 +50,7 @@ class ArticleController extends Controller
         
              $filePath = null;
             if ($request->has('image')) {
-                $filePath = uploadImage('articles', $request->image);
+                $filePath =  $this->uploadImage('articles', $request->image);
             }
            
              DB::beginTransaction();
@@ -124,11 +126,11 @@ class ArticleController extends Controller
             $filePath = $article->image;
             if ($request->has('image')) {
                 if( $filePath!=null){
-                removeImage('/dashboard/uploads/articles/' . $filePath);
-                $filePath = uploadImage('articles', $request->image);
+                    $this->removeImage('/dashboard/uploads/articles/' . $filePath);
+                $filePath =  $this->uploadImage('articles', $request->image);
                 }
                 else{
-                    $filePath = uploadImage('articles', $request->image); 
+                    $filePath =  $this->uploadImage('articles', $request->image); 
                 }
             }
 
@@ -146,7 +148,7 @@ class ArticleController extends Controller
             return  redirect()->route('admin.article')->with(['success' => 'تم التحديث بنجاح']);
         } catch (Exception $exp) {
             DB::rollBack();
-            removeImage('/dashboard/uploads/articles/'. $filePath);
+            $this->removeImage('/dashboard/uploads/articles/'. $filePath);
             return  redirect()->route('admin.article')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
     }
@@ -166,7 +168,7 @@ class ArticleController extends Controller
                $this->returnError(404,' هذا المقالة غير موجود اوتم حذفة من قبل');
             $filePath = $article->image;
             if ($filePath != null) {
-                removeImage('/dashboard/uploads/articles/' . $filePath);
+                $this-> removeImage('/dashboard/uploads/articles/' . $filePath);
             }
             $article->delete();
             return $this->returnData ('success','200','تم الحذف بنجاح');

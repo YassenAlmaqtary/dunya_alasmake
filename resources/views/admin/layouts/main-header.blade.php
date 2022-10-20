@@ -70,7 +70,7 @@
                   {{-- <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span> --}}
                 </h3>
                 <p class="text-sm">{{$subscript->message}}</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{ time_elapsed_string($subscript->updated_at)}}</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{ App\Http\Controllers\Admin\SubscriptController::time_elapsed_string($subscript->updated_at)}}</p>
               </div>
             </div>
             <!-- Message End -->

@@ -10,10 +10,11 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Redirect;
+use App\Traits\HelperTrait;
 
 class ContactWebController extends Controller
 {
-   
+   use HelperTrait;
 
     /**
      * Display a listing of the resource.
@@ -53,7 +54,7 @@ class ContactWebController extends Controller
             'email'=>$data->email,
             'address'=>$data->address,
             'message'=>$data->message,
-            'time'=>time_elapsed_string($data->updated_at),
+            'time'=>$this->time_elapsed_string($data->updated_at),
             'created_at'=>$data->created_at,
             'updated_at'=>$data->updated_at,
             'count'=>Subscript::count(),
