@@ -1,5 +1,6 @@
 <head>
     <!-- basic -->
+    <meta name="viewport" content="width=devics-width,initial-scale=1">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- mobile metas -->
