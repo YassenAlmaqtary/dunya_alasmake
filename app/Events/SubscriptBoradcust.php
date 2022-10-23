@@ -19,7 +19,7 @@ class SubscriptBoradcust implements ShouldBroadcast
      *
      * @return void
      */
-    public $subscript;
+    public  $subscript;
 
     public function __construct($subscript)
     { 
