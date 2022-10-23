@@ -2,7 +2,7 @@
   $vision_details=@isset($about)?$about->vision_details:old('vision_details');
   $objectives_details=@isset($about)?$about->objectives_details:old('objectives_details');
   $Aboutus_details=@isset($about)?$about->Aboutus_details:old('Aboutus_details');
-  @endisset  
+  
 @endphp
 <form 
 action="

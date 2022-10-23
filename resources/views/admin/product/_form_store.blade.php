@@ -4,7 +4,7 @@
   $price=@isset($product)?$product->price:old('price');  
   $details=@isset($product)?$product->details:old('details');
   $main_catgory_id=@isset($product)?$product->category_id:old('categry_id');
-  @endisset  
+    
 @endphp
 
 <form 

@@ -5,7 +5,7 @@
   $phone=@isset($customer)?$customer->phone:old('phone');
   $imag=@isset($customer)?$customer->image_path:asset('asset/dashboard/uploads/placeholder1.png');
   $gender=@isset($customer)?$customer->gender:old('gender');
-  @endisset  
+  
 @endphp
 <form 
 action="

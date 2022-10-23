@@ -3,7 +3,7 @@
   $imag=@isset($cook)?$cook->image_path:asset('asset/dashboard/uploads/placeholder1.png');
   $price=@isset($cook)?$cook->price:old('price');  
   $details=@isset($cook)?$cook->details:old('details');
-  @endisset  
+  
 @endphp
 
 <form 
