@@ -1,16 +1,30 @@
 
-  Echo.channel('subscripetMessage')
-    .listen('SubscriptBoradcust', (e) => {
-        addMessageSubscript(e.subscript)
-        document.getElementById('count_subscript').innerHTML=e.subscript.count
+  // Echo.channel('subscripetMessage')
+  //   .listen('SubscriptBoradcust', (e) => {
+  //       addMessageSubscript(e.subscript)
+  //       document.getElementById('count_subscript').innerHTML=e.subscript.count
         
-    });
+  //   });
 
 
 //   window.Echo.channel('subscripetMessage')
 //   .notification((notification) => {
 //     console.log(notification);
 //   });
+
+Pusher.logToConsole = true;
+
+var pusher = new Pusher('0e7d60b79cbd24c51cc0', {
+  cluster: 'ap1'
+});
+
+var channel = pusher.subscribe('dunaalasmac-development');
+    channel.bind('MyEvent', function(e) {
+      console.log("kkk");
+      addMessageSubscript(e.subscript)
+       document.getElementById('count_subscript').innerHTML=e.subscript.count    
+    });
+
 
 
 

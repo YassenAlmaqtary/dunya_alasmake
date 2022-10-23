@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\web;
 
 use App\Events\SubscriptBoradcust;
+use App\Http\Controllers\Admin\SubscriptController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SubscriptRequset;
 use App\Models\Subscript;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Notification;
+//use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Redirect;
 use App\Traits\HelperTrait;
 
@@ -54,7 +55,7 @@ class ContactWebController extends Controller
             'email'=>$data->email,
             'address'=>$data->address,
             'message'=>$data->message,
-            'time'=>$this->time_elapsed_string($data->updated_at),
+            'time'=>  SubscriptController:: time_elapsed_string($data->updated_at),
             'created_at'=>$data->created_at,
             'updated_at'=>$data->updated_at,
             'count'=>Subscript::count(),
@@ -68,6 +69,7 @@ class ContactWebController extends Controller
        return Redirect::back()->with(['success' => 'تم ارسال تعليقك بنجاح']);
         }
         catch(Exception $exp){
+            return $exp;
             return Redirect::back()->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
             
         }

@@ -33,6 +33,11 @@ class SubscriptBoradcust implements ShouldBroadcast
      */
     public function broadcastOn()
     {   
-        return new Channel('subscripetMessage');
+        return new Channel('dunaalasmac-development');
     }
+
+    public function broadcastAs()
+   {
+       return 'MyEvent';
+   }
 }
