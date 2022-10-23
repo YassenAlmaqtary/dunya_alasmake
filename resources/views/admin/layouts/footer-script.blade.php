@@ -39,5 +39,5 @@
 <script src="http://{{ Request::getHost()}}:{{env('LARAVEL_ECHO_PORT')}}/socket.io/socket.io.js"></script>
 <script src="{{ url('js/app.js') }}" type="text/javascript"></script>--}}
 <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
-<script src="{{asset('asset/dashboard/assets/js/subscript-message.js')}}"></script>
+<script src="{{asset('asset/dashboard/assets/js/subscript-message-pusher.js')}}"></script>
 @yield('scripts') 
