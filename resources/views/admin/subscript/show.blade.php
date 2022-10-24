@@ -79,7 +79,12 @@
                             
                   <td style="width:30%;">
                   
-  
+                  <a class="btn btn-info btn-sm" href="{{route('admain.subscript.answerview',$subscript->id)}}">
+                      <i class="fas fa-pencil-alt">
+                      </i>
+                      رد
+                  </a>
+
                 <a class="btn btn-danger btn-sm" href="#" onclick="setIDItem({{$subscript->id}})" data-toggle="modal" data-target="#modal-danger">
                   <i class="fas fa-trash">
                   </i>
