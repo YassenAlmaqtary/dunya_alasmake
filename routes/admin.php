@@ -132,6 +132,8 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware' => 'auth:ad
             Route::get('subscripts','SubscriptController@index')->name('admin.subscript');
             Route::post('subscript/destroy','SubscriptController@destroy')->name('admin.subscript.delete');
             Route::get('subscript/{id}','SubscriptController@show')->name('admin.subscript.show');
+            Route::get('answerview/{id}','SubscriptController@answerview')->name('admain.subscript.answerview');
+            Route::post('store','SubscriptController@store')->name('admain.subscript.store');
 
           });
            //##################### end subscript ######################//

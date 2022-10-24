@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\MailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,8 @@ Route::group(['prefix'=>'cook'],function() {
 //////////////////////////////////////////////////////////////////////////////
 Route::group(['prefix'=>'contact-us'],function() {
     //Route::get('contact-us','ProductWebController@getContact')->name('contact');
+    
+  });
     Route::resource('contact-us','ContactWebController', [
         'names' => [
             'index' => 'contact-us',
@@ -45,7 +48,7 @@ Route::group(['prefix'=>'contact-us'],function() {
             //'destroy' => 'contact-us.delete',
             ]  
           ]);
-      });
+        
       
   ////////////////////////////////////////////////////////////////////////////////    
   Route::group(['prefix'=>'article'],function() {

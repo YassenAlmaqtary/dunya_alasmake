@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MailSubscriptRequest;
+use App\Mail\SubScriptMail;
 use App\Models\Subscript;
 use App\Traits\GeneralTrait;
 use DateTime;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SubscriptController extends Controller
 {
@@ -31,7 +34,39 @@ class SubscriptController extends Controller
 
     }
 
+    public function answerview($id){
 
+       try{
+          $subscript=Subscript::find($id);
+          if(!$subscript)
+           return redirect()->route('admin.subscript')->with(['error' => ' هذا الرسالة غير موجود او تم حذفة من قبل']);
+          return  view('admin.subscript.answer',compact('subscript'));
+       }
+        catch(Exception $exp){
+            return  redirect()->route('admin.subscript')->with(['error' => 'حدث خطا ما يرجاء المحاوله لاحقا']);
+
+        }
+
+    }
+
+    public function store(MailSubscriptRequest $request){
+         try{
+            
+            $email=$request->email;
+     
+            $body = [
+                'message'=>$request->message,
+            ];
+     
+             Mail::to($email)->send(new SubScriptMail($body));
+             return  redirect()->route('admin.subscript')->with(['success' => 'تم الارسال بنجاح']);
+         }
+         catch(Exception $exp){
+             return $exp;
+            return  redirect()->route('admin.subscript')->with(['error' => 'حدث خطا ما يرجاء المحاوله لاحقا']);
+         }   
+
+    }
 
     public function show($id){
 
