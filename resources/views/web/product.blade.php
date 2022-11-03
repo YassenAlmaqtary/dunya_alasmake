@@ -92,7 +92,7 @@
 
  <!-- news section -->
       
- <div class="news project">
+ <!--<div class="news project">
   <div class="container">
      <div class="row">
         <div class="col-md-12">
@@ -102,32 +102,32 @@
         </div>
      </div>
      <div class="row">
-        @foreach ($articles as $article)
+        {{-- @foreach ($articles as $article) --}}
         <div class="col-md-12 margin_top40">
          <div class="row d_flex">
             <div class="col-md-5">
                <div class="news_img">
-                  <figure><img style="width: 70%;height:70%;" src="{{$article->image_path}}"></figure>
+                  {{-- <figure><img style="width: 70%;height:70%;" src="{{$article->image_path}}"></figure> --}}
                </div>
             </div>
             <div class="col-md-7">
                <div class="news_text">
-                  <h3>{{$article->title}}</h3>
-                  <span>{{$article->updated_at}}</span> 
+                  {{-- <h3>{{$article->title}}</h3> --}}
+                  {{-- <span>{{$article->updated_at}}</span>  --}}
                   {{-- <div class="date_like">
                      <span>Like </span><span class="pad_le">Comment</span>
                   </div> --}}
-                  <p>{{$article->article_details}}</p>
+                  {{-- <p>{{$article->article_details}}</p> --}}
                </div>
             </div>
          </div>
       </div>
-        @endforeach
+        {{-- @endforeach --}}
        
        
      </div>
   </div>
-</div>
+</div>-->
 <!-- end news section -->
 <!-- newslatter section -->
 {{-- <div  class="newslatter project">
