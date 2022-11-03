@@ -79,7 +79,7 @@ $catgorys=Category::aLL();
                             @isset($catgorys)
                             @foreach ($catgorys as $category )
                             <li class="nav-item">
-                              <h5 <a class="nav-link" href="{{route('product',$category->id)}}">{{$category->name}}</a></h5>
+                              <h5><a class="nav-link" href="{{route('product',$category->id)}}">{{$category->name}}</a></h5>
                             </li>
                             @endforeach
                             @endisset
