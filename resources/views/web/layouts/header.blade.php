@@ -74,24 +74,24 @@ $catgorys=Category::aLL();
                       <div class="collapse navbar-collapse" id="navbarsExample04">
                          <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                              <a class="nav-link" href="{{route('all')}}">الكــل</a>
+                              <h5><a class="nav-link" href="{{route('all')}}">الكـل</a> </h5>
                             </li>
                             @isset($catgorys)
                             @foreach ($catgorys as $category )
                             <li class="nav-item">
-                            <a class="nav-link" href="{{route('product',$category->id)}}">{{$category->name}}</a>
+                              <h5> <a class="nav-link" href="{{route('product',$category->id)}}">{{$category->name}}</a></h5>
                             </li>
                             @endforeach
                             @endisset
                             <li class="nav-item">
-                              <a class="nav-link" href="{{route('cooks')}}">الطبخات</a>
+                             <h5> <a class="nav-link" href="{{route('cooks')}}">الطبخات</a></h5>
                            </li>
                             <li class="nav-item">
-                               <a class="nav-link" href="{{route('article')}}">المقالات</a>
+                              <h5> <a class="nav-link" href="{{route('article')}}">المقالات</a> </h5>
                             </li>
                            
                             <li class="nav-item">
-                              <a class="nav-link" href="{{route('contact-us.create')}}"><span>تواصل معنا</span></a>
+                              <h5> <a class="nav-link" href="{{route('contact-us.create')}}"><span>تواصل معنا</span></a></h5> </li>
                            </li>
                             {{-- <li class="nav-item">
                                <a class="nav-link" href="#">Fashion</a>
