@@ -28,7 +28,7 @@ class ProductWebController extends Controller
          $products=Product::where('statuse','1')->get();
          }
           
-        return view('web.product', compact('products','articles',/*'category_name'*/));
+        return view('web.product', compact('products',/*'articles',*/'category_name'));
 
     } 
 
