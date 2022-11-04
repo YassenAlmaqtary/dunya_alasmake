@@ -29,7 +29,7 @@ $catgorys=Category::aLL();
                             </select>
                          </div>
                       </form> --}}
-                      <span class="time_o"> Open hour: 8.00 - 2.00</span>
+                      <span class="time_o"> ساعات الدوام: 2.00 - 8.00</span>
                    </div>
                 </div>
              </div>
