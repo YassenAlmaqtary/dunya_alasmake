@@ -50,10 +50,14 @@ $catgorys=Category::aLL();
                   </div>
                   
                </div>
+
                 <div class="col-md-4 logfont">
-                   <a class="logo" href="#"><img src="{{asset('asset/web/asset/images/logo1.png')}}" alt="#"/> دنيــا الاســــــماك
-                    <span> Dunya alasmak</span></a>
-                </div>
+                 
+                   
+                     <a class="logo" href="#"><img src="{{asset('asset/web/asset/images/logo1.png')}}" alt="#"/> دنيــا الاســــــماك
+                   <span> Dunya alasmak</span></a>
+                   </div>
+
                 <div class="col-md-4">
                    {{-- <ul class="right_icon d_none1">
                       <li><a href="#"><img src="{{asset('web/asset/images/shopping.png')}}" alt="#"/></a> </li>

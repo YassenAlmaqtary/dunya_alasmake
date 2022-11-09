@@ -277,6 +277,9 @@ header{
      z-index: 111;
  
 }
+
+
+
 .logfont{
 position: relative;
 font-size:x-large;
@@ -284,9 +287,9 @@ font-size:x-large;
 .logfont span{
 position: absolute;
 bottom: 8px;;
-left:60px;
+left:60px;}
  /* transform: translateX(-3%);  */
-}
+
 
 .square{
      background-color: white;
