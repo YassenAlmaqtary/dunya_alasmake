@@ -69,7 +69,7 @@ $catgorys=Category::aLL();
        </div>
        
        <div class="header_bottom">
-          <div class="container">
+          <div class="">
              <div class="row">
                 <div class="col-sm-12">
                    <nav class="navigation navbar navbar-expand-lg navbar-dark ">
