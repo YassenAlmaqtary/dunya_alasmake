@@ -29,7 +29,8 @@ $catgorys=Category::aLL();
                             </select>
                          </div>
                       </form> --}}
-                      <span class="time_o"> ساعات الدوام: 2.00 - 8.00</span>
+                      <span class="time_o">  الدوام من: 9.00 صباحا الى 6.00 مسائا</span>
+                      <span class="time_o">   الجمعة من: 6.00 صباحا الى 2.00 ظهرا</span>
                    </div>
                 </div>
              </div>
@@ -64,10 +65,10 @@ $catgorys=Category::aLL();
        </div>
        
        <div class="header_bottom">
-          <div class="container">
+          <div class="">
              <div class="row">
-                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-                   <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                <div class="col-sm-12">
+                   <nav class="navigation navbar navbar-expand-lg navbar-dark ">
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                       </button>
@@ -79,7 +80,7 @@ $catgorys=Category::aLL();
                             @isset($catgorys)
                             @foreach ($catgorys as $category )
                             <li class="nav-item">
-                              <h5><a class="nav-link" href="{{route('product',$category->id)}}">{{$category->name}}</a></h5>
+                              <a class="nav-link"  href="{{route('product',$category->id)}}">{{$category->name}}</a>
                             </li>
                             @endforeach
                             @endisset
