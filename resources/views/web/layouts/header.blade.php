@@ -29,8 +29,8 @@ $catgorys=Category::aLL();
                             </select>
                          </div>
                       </form> --}}
-                      <span class="time_o">  الدوام من: 9.00 صباحا الى 6.00 مسائا</span>
-                      <span class="time_o">   الجمعة من: 6.00 صباحا الى 2.00 ظهرا</span>
+                      <span class="time_o"> الدوام ايام الاسبوع من: 6.00 صباحا الى 9.00 مسائا</span>
+                      <span class="time_o">  الجمعة من: 6.00 صباحا الى 2.00 ظهرا</span>
                    </div>
                 </div>
              </div>
@@ -46,7 +46,7 @@ $catgorys=Category::aLL();
                    </ul>
                 </div>
                 <div class="col-md-4">
-                  <div class="square"><h2>عدد الزوار <span> {{App\Models\Traffic::count()}} زائر</span></h2>
+                  <div class="square"><span>عدد الزوار </span><span> {{App\Models\Traffic::count()}} </span>
                   </div>
                   
                </div>
