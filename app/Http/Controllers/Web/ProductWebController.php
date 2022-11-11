@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Product;
+use Exception;
 use Illuminate\Http\Request;
 
 class ProductWebController extends Controller
@@ -17,7 +18,7 @@ class ProductWebController extends Controller
 
 
         public function getProduct($catgory_id=null){  
-            
+        try{    
         $category_name="الكل";       
         // $articles=Article::limit(3)->where('status','1')->orderBy('updated_at', 'desc')->get();
         if($catgory_id!=null){
@@ -29,6 +30,10 @@ class ProductWebController extends Controller
          }
           
         return view('web.product', compact('products',/*'articles',*/'category_name'));
+        }
+        catch(Exception $exp){
+            return  redirect()->back();
+        }
 
     } 
 
