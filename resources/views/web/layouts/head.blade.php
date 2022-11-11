@@ -22,8 +22,8 @@
     <!-- style css -->
     @if (config('app.env') == 'local')
     <link rel="stylesheet" href="{{asset('asset/web/asset/css/style.css')}}">
-    {{-- @else
-    <link rel="stylesheet" href="{{asset(mix('asset/web/asset/css/style.css'),true)}}"> --}}
+    @else
+    <link rel="stylesheet" href="{{asset(mix('asset/web/asset/css/style.css'),true)}}">
     @endif
     <!-- Responsive-->
     <link rel="stylesheet" href="{{asset('asset/web/asset/css/responsive.css')}}">
