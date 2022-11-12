@@ -4,6 +4,7 @@
 /*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
 *{
   direction:rtl;   
+ 
 }
 
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap&subset=latin-ext');
@@ -94,6 +95,7 @@ h6 {
      color: #111111;
      margin: 0
 }
+
 
 h1 {
      font-size: 24px;
@@ -277,14 +279,7 @@ header{
  
 }
 
-.logfont{
-position: relative;
-font-size:x-large;
-}
-.logfont span{
-position: absolute;
-bottom: 8px;;
-left:60px;}
+
  /* transform: translateX(-3%);  */
 
 
@@ -424,13 +419,21 @@ ul.social_icon li a:hover {
 }
 
 .logo {
-     text-align: center;
-     display: block;
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
 
 }
 .logo img{
 height: 100px;
      
+}
+.logo span{
+ font-weight: bold;
+ font-size: 15px;
 }
 ul.conta_icon li a i {
      padding-right: 5px;
@@ -1188,12 +1191,13 @@ margin: 0 15px 20px 15px;
      }
       
    
-     .logfont span{
+    /* .logfont span{
           position: absolute;
           bottom: 8px;;
           left:30px;
-           /* transform: translateX(-3%);  */
-}
+           /* transform: translateX(-3%); } */
+      
+
 }
 
 

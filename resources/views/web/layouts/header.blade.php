@@ -40,7 +40,7 @@ $catgorys=Category::aLL();
           <div class="container">
              <div class="row d_flex">
                 <div class="col-md-4">
-                   <ul class="conta_icon d_none1">
+                   <ul class="conta_icon">
                       {{-- <li><a href="#"><img src="{{asset('web/asset/images/email.png')}}" alt="#"/> demo@gmail.com</a> </li> --}}
                       <li><a href="tel:+967772003973"><img src="{{asset('asset/web/asset/images/call.png')}}" alt="#"/><span>:Call us:+967772003973</span></a> </li>
                    </ul>
@@ -53,17 +53,16 @@ $catgorys=Category::aLL();
 
                 <div class="col-md-4 logfont">
                  
-                   
-                     <a class="logo" href="#"><img src="{{asset('asset/web/asset/images/logo1.png')}}" alt="#"/> دنيــا الاســــــماك
-                   <span> Dunya alasmak</span></a>
+                   <div class="logo">
+                     <img src="{{asset('asset/web/asset/images/logo1.png')}}" alt="#"/>
+                      
+                   <span> دنيـــا الاسمـــاك</span>
+                   <span> Dunya alasmak</span>
                    </div>
+                 
+                  </div>
 
-                <div class="col-md-4">
-                   {{-- <ul class="right_icon d_none1">
-                      <li><a href="#"><img src="{{asset('web/asset/images/shopping.png')}}" alt="#"/></a> </li>
-                      <a href="#" class="order">Order Now</a>  
-                   </ul> --}}
-                </div>
+               
              </div>
           </div>
        </div>
