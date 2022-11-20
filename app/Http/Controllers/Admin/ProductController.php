@@ -92,7 +92,6 @@ class ProductController extends Controller
             return  redirect()->route('admin.product')->with(['success' => 'تم الحفظ بنجاح']);
         } catch (Exception $exp) {
             DB::rollBack();
-            return $exp;
             $this->removeImage('/dashboard/uploads/products/' . $filePath);
             return  redirect()->route('admin.product')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
