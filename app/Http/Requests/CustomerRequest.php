@@ -28,7 +28,7 @@ class CustomerRequest extends FormRequest
            'phone'=> ['required','min:9','max:9','regex:/^((71)|(73)|(77)|(70))[0-9]{7}/'],
            'email'=>'required|email',
            'address' => 'required|string|max:500',
-           'image'=> 'mimes:jpg,jpeg,png,svg',
+           'image'=> 'mimes:jpg,jpeg,png,svg|max:2048',
            'gender' => 'required|integer|nullable',
          
         ];

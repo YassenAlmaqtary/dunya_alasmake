@@ -41,26 +41,26 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-        'categorys' => [
-            'driver' => 'local',
-            'root' => base_path().'/asset/dashboard/uploads/categorys',
-        ],
-        'products' => [
-            'driver' => 'local',
-            'root' => base_path().'/asset/dashboard/uploads/products',
-        ],
-        'customers'=>[
-            'driver' => 'local',
-            'root' => base_path().'/asset/dashboard/uploads/customers',
-        ],
-        'articles'=>[
-            'driver' => 'local',
-            'root' => base_path().'/asset/dashboard/uploads/articles',
-        ],
-        'cooks'=>[
-            'driver' => 'local',
-            'root' => base_path().'/asset/dashboard/uploads/cooks',
-        ],
+        // 'categorys' => [
+        //     'driver' => 'local',
+        //     'root' => base_path().'/asset/dashboard/uploads/categorys',
+        // ],
+        // 'products' => [
+        //     'driver' => 'local',
+        //     'root' => base_path().'/asset/dashboard/uploads/products',
+        // ],
+        // 'customers'=>[
+        //     'driver' => 'local',
+        //     'root' => base_path().'/asset/dashboard/uploads/customers',
+        // ],
+        // 'articles'=>[
+        //     'driver' => 'local',
+        //     'root' => base_path().'/asset/dashboard/uploads/articles',
+        // ],
+        // 'cooks'=>[
+        //     'driver' => 'local',
+        //     'root' => base_path().'/asset/dashboard/uploads/cooks',
+        // ],
 
         's3' => [
             'driver' => 's3',
