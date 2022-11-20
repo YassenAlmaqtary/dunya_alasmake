@@ -76,7 +76,7 @@
               <tr>
                   
                   <td>{{$product->name}}</td>
-                  <td><img style="width: 50px; height: 50px;" src="{{$product->image_path}}"></td>
+                  <td><img style="width: 50px; height: 50px;" src="{{$product->image_path}}" loading="lazy"></td>
                   <td>{{$product->price}}</td>
                   <td style="width:20%;height:5%;">{{$product->details}}</td>
                   {{-- <td>{{$product->discount_price}}</td> --}}
