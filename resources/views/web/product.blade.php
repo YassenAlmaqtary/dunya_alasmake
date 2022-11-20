@@ -1,6 +1,6 @@
 @extends('web.layouts.master-content')
 @section('title')
-دنيا الاسماك
+دنيا الاسماك البليلي منتجاتنا عالم تميز من الماكولات البحرية
 @endsection
 @section('css')
   <link rel="stylesheet" href="{{asset('asset/web/asset/product.css')}}">

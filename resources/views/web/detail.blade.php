@@ -1,6 +1,6 @@
 @extends('web.layouts.master-content')
 @section('title')
-دنيا الاسماك
+دنيا الاسماك البليلي تفاصيل المنتج
 @endsection
 
 @section('css')

@@ -1,6 +1,7 @@
 @extends('web.layouts.master-content')
+
 @section('title')
-دنيا الاسماك
+دنيا الاسماك البليلي الطبخات
 @endsection
 @section('css')
   <link rel="stylesheet" href="{{asset('asset/web/asset/product.css')}}">
