@@ -93,14 +93,14 @@
                   <i class="fas fa-trash">
                   </i>
                   حذف
-                 </a>
-            
+                 </a> 
                   <input type="checkbox" onchange="clickFn({statu:`${statu=this.checked?'1':'0'}`,product_id:`${this.value}`},
                   '{{route('productStatus')}}')" value="{{$product->id}}" data-toggle="switchbutton" data-onlabel="مفعل" data-offlabel="غير مفعل"@if ($product->statuse)
                    checked 
                    @endif 
                   data-onstyle="success" data-offstyle="danger"
-                  data-size="sm" >              
+                  data-size="sm" > 
+                  <!-- Default switch -->           
                   </td>
                 </tr>
               @endforeach
@@ -108,15 +108,13 @@
           </tbody>
           <tfoot>
           <tr>
-            
               <th>الاسم</th>
               <th>الصورة</th>
               <th>سعر الكيلو</th>
               <th>التفاصيل</th>
               {{-- <th>التخفيظ</th> --}}
               <th>القسم</th>
-              <th>العمليات</th>
-           
+              <th>العمليات</th> 
           </tr>
           </tfoot>
         </table>
@@ -156,7 +154,7 @@
       "buttons": ["copy", "csv", "excel", "pdf", "print"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
-      "paging": true,
+      "paging":false,
       "lengthChange": true,
       "searching": true,
       "ordering": true,

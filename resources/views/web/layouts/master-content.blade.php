@@ -3,10 +3,10 @@
  @include('web.layouts.head')
    <!-- body -->
    <body class="main-layout">
-      <!-- loader  -->
+      {{-- <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="{{asset('asset/web/asset/images/loading.gif')}}" alt="#" /></div>
-      </div>
+      </div> --}}
       <!-- end loader -->
        @include('web.layouts.header')    
       {{-- <!-- banner -->

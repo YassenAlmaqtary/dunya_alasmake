@@ -24,19 +24,19 @@ class AboutRequset extends FormRequest
     public function rules()
     {
         return [
-            'vision_details'=>'required|string|max:100',
-            'objectives_details'=>'required|string|max:100',
-            'Aboutus_details'=>'required|string|max:100',
+            'vision_details'=>'required|string|max:200',
+            'objectives_details'=>'required|string|max:300',
+            'Aboutus_details'=>'required|string|max:200',
         ];
     }
 
-    public function messages()
+    public function messages()  
     {
         return [
             'required'=>'هذا الحقل مطلوب',
-            'vision_details.max'=>'يجب ان لايزيد عن 100 حرفا',
-            'objectives_details.max'=>'يجب ان لايزيد عن 100 حرفا',
-            'Aboutus_details.max'=>'يجب ان لايزيد عن 100 حرفا',
+            'vision_details.max'=>'يجب ان لايزيد عن 200 حرفا',
+            'objectives_details.max'=>'يجب ان لايزيد عن 300 حرفا',
+            'Aboutus_details.max'=>'يجب ان لايزيد عن 200 حرفا',
             'string'=>'الاسم يجب ان يكون احرف',
         ];
     }

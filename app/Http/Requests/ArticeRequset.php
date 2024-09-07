@@ -26,7 +26,7 @@ class ArticeRequset extends FormRequest
         return [
             'title'=>'required|string|max:50',
             'article_details'=>'required|string|max:100',
-            'image'=> 'mimes:jpg,jpeg,png,svg',
+            'image'=> 'mimes:jpg,jpeg,png,svg|max:2048',
         ];
     }
 

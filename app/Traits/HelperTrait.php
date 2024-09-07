@@ -2,6 +2,7 @@
 namespace App\Traits;
 
 use Illuminate\Support\Facades\App;
+use Intervention\Image\Facades\Image;
 
 trait HelperTrait {
 
@@ -23,12 +24,17 @@ public function get_defoult_langug(){
 
 public function uploadImage($folder, $image)
 {  
-    $image->store('/', $folder);   
-    $filename = $image->hashName();
-    
-    $path ='asset/dashboard/uploads/'. $folder . '/' . $filename;
+   $image=Image::make($image->path());
    
+    
+  //$image->store('/', $folder);   
+  $filename = time().$image->extension;
+  $path ='asset/dashboard/uploads/'. $folder . '/' . $filename;
    //$image->move(public_path('/dashboard/uploads/'. $folder . '/'),$filename);
+   $image->resize(100, 100, function ($constraint) {
+      $constraint->aspectRatio();
+  })->save($path);
+  
     return $filename;
 }
 

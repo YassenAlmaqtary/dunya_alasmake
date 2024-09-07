@@ -98,9 +98,10 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware' => 'auth:ad
               'edit' => 'admin.apout.edit',
               'update' => 'admin.apout.update',
               'show'=>'admin.apout.show',
-             // 'destroy' => 'admin.apout.delete',       
-              ] 
-            ]);
+              'destroy' => 'admin.apout.delete',       
+           ],
+          ])->only(['create','index','store','edit']);
+
             Route::post('apout/destroy','AboutController@destroy')->name('admin.apout.delete');
             Route::post('apout/changeStatusaput','AboutController@changeStause')->name('apoutStatus');
            });    
@@ -120,7 +121,7 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware' => 'auth:ad
               'show'=>'admin.article.show',
              // 'destroy' => 'admin.apout.delete',       
               ] 
-            ]);
+            ])->only(['create','index','store','edit']);
             Route::post('article/destroy','ArticleController@destroy')->name('admin.article.delete');
             Route::post('article/changeStatusaput','ArticleController@changeStause')->name('articleStatus');
            });    

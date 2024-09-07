@@ -43,12 +43,13 @@ Route::group(['prefix'=>'contact-us'],function() {
             'index' => 'contact-us',
             'create' => 'contact-us.create',
             'store' => 'contact-us.store',
-            'edit' => 'contact-us.edit',
+            'edit' => 'contact-us.edit',  
             'update' => 'contact-us.update',
-            //'destroy' => 'contact-us.delete',
-            ]  
-          ]);
-        
+            'destroy' => 'contact-us.delete',
+        ]
+  
+        ])->only(['create','store']);
+
       
   ////////////////////////////////////////////////////////////////////////////////    
   Route::group(['prefix'=>'article'],function() {

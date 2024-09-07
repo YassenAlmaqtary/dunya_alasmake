@@ -25,7 +25,7 @@ class CookRequest extends FormRequest
     {
         
         return [
-                'image'=> 'required_without:id|mimes:jpg,jpeg,png,svg',
+                'image'=> 'required_without:id|mimes:jpg,jpeg,png,svg|max:2048',
                 'name'=> 'required|string|max:100',
                 'price'=>'required|Integer|regex:/^\d+(\.\d{1,2})?$/',
                 'details'=>'nullable|string|max:197',

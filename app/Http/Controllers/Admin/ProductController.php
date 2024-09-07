@@ -59,6 +59,7 @@ class ProductController extends Controller
             if ($product_name_exsite > 0) {
                 return  redirect()->route('admin.product')->with(['error' => 'الاسم موجود من قبل']);
             }
+                
             $filePath = null;
             if ($request->has('image')) {
                 $filePath = $this->uploadImage('products', $request->image);

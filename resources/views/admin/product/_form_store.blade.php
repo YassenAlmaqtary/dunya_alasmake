@@ -30,10 +30,9 @@ method="post" novalidate enctype="multipart/form-data">
               @foreach ($catgorys as $category )
               <option {{ $main_catgory_id == $category->id ? "selected" : "" }} value="{{$category->id}}">{{$category->name}}</option>
               @endforeach
-             
             </select>
           </div>
-          @error('name')
+          @error('category_id')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>

@@ -3,20 +3,20 @@
   <div class="footer">
      <div class="container">
         <div class="row">
-           <div class="col-md-4">
-              <div class="inror_box">
+           <div class="col-sm-4">
+              <div class="">
                  <h3>الاهداف</h3>
                  <p>{{App\Models\About::selection()->first()->objectives_details}}</p>
               </div>
            </div>
-           <div class="col-md-4">
-              <div class="inror_box">
+           <div class="col-sm-4">
+              <div class="">
                  <h3>الرؤية</h3>
                  <p>{{App\Models\About::selection()->first()->vision_details}}</p>
               </div>
            </div>
-           <div class="col-md-4">
-              <div class="inror_box">
+           <div class="col-sm-4">
+              <div class="">
                  <h3>نبذة عنا</h3>
                  <p>{{App\Models\About::selection()->first()->Aboutus_details}}</p>
               </div>
@@ -39,6 +39,10 @@
                      <li> <a href="https://instagram.com/dny.lsmk?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
                      </li>
+                     <li> <a href="https://www.google.com/maps/place/%D8%AF%D9%86%D9%8A%D8%A7+%D8%A7%D9%84%D8%A7%D8%B3%D9%85%D8%A7%D9%83+%D9%84%D9%84%D8%A7%D8%B3%D9%85%D8%A7%D9%83+%D8%A7%D9%84%D8%B7%D8%A7%D8%B2%D8%AC%D8%A9%E2%80%AD/@15.3410707,44.2102034,15z/data=!4m5!3m4!1s0x0:0xcff9aa5ee2b6c352!8m2!3d15.3410208!4d44.2101388"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                        <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                      </svg></a></li>
                   </ul>
                </div>
             </div>
@@ -49,7 +53,7 @@
         <div class="container">
            <div class="row">
               <div class="col-md-12">
-                 <p> &copy; <?php echo date("Y"); ?> : حقوق الطبع محفوظة لدى<a href="{{route('home')}}">دنيا الاسماك</a></p>
+                 <p> &copy; <?php echo date("Y"); ?> : حقوق الطبع محفوظة <a href="#">دنيا الاسماك</a></p>
               </div>
            </div>
         </div>

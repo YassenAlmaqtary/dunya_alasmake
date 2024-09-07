@@ -1,11 +1,15 @@
 <head>
     <!-- basic -->
+    
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+
     <meta name="viewport" content="width=devics-width,initial-scale=1">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- mobile metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- site metas -->
     <title>@yield('title')</title>
     <meta name="keywords" content="">
@@ -13,9 +17,11 @@
     <meta name="author" content="">
     <link rel = "icon" href ="{{asset('asset/web/asset/images/logo1.png')}}" type = "image/x-icon">
     <!-- bootstrap css -->
+    
     <link rel="stylesheet" href="{{asset('asset/web/asset/css/bootstrap.min.css')}}">
     <!-- style css -->
     <link rel="stylesheet" href="{{asset('asset/web/asset/css/style.css')}}">
+
     <!-- Responsive-->
     <link rel="stylesheet" href="{{asset('asset/web/asset/css/responsive.css')}}">
     <!-- fevicon -->
